@@ -1,4 +1,31 @@
 <resources>
     <string name="app_name">liband</string>
     <string name="login">Login</string>
+    <string name="continue_with_facebook">Continue with Facebook</string>
+    <string name="email_address">Email Address</string>
+    <string name="forgot_password">Forgot Password</string>
+    <string name="password">Password</string>
+    <string name="signup">Signup</string>
+    <string name="first_name">First Name</string>
+    <string name="last_name">Last Name</string>
+    <string name="renter_password">Renter password</string>
+    <string name="profile_image">Profile Image</string>
+    <string name="edit">Edit</string>
+    <string name="edit_profile">Edit Profile</string>
+    <string name="langauge">Langauge</string>
+    <string name="cell_phone">Cell Phone</string>
+    <string name="save">Save</string>
+    <string name="title">Title</string>
+    <string name="bithdate">Bithdate</string>
+    <string name="email">Email</string>
+    <string name="settings">Settings</string>
+    <string name="logout">Logout</string>
+    <string name="change_password">Change Password</string>
+    <string name="terms_of_service">Terms of Service</string>
+    <string name="privacy_policy">Privacy Policy</string>
+    <string name="update">Update</string>
+    <string name="current_password">Current Password</string>
+    <string name="new_password">New Password</string>
+    <string name="confrim_new_passoword">Confirm New Passoword</string>
+    <string name="profile">Profile</string>
 </resources>
