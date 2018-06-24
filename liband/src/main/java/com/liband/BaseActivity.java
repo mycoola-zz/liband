@@ -1,6 +1,7 @@
 package com.liband;
 
 import android.annotation.SuppressLint;
+import android.content.Intent;
 import android.os.Build;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
@@ -62,5 +63,10 @@ public abstract class BaseActivity extends AppCompatActivity implements View.OnC
         }
     }
 
+    public void startAnotherActivity(Class anotherActivity) {
+        final Intent intent = new Intent(this, anotherActivity);
+        intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP | Intent.FLAG_ACTIVITY_CLEAR_TASK | Intent.FLAG_ACTIVITY_NEW_TASK);
+        startActivity(intent);
+    }
 
 }
