@@ -38,7 +38,14 @@ public abstract class BaseActivity extends AppCompatActivity implements View.OnC
     }
 
 
-    public void addFragment(int containerViewId, Fragment hideFragment, Fragment newFragment) {
+    public void addFragment(int containerViewId, Fragment newFragment) {
+        final FragmentManager manager = getSupportFragmentManager();
+        final FragmentTransaction transaction = manager.beginTransaction();
+        transaction.add(containerViewId, newFragment, newFragment.getClass().getSimpleName());
+        transaction.commitAllowingStateLoss();
+    }
+
+    public void addFragmentWithHideAnotherFragment(int containerViewId, Fragment hideFragment, Fragment newFragment) {
         final FragmentManager manager = getSupportFragmentManager();
         final FragmentTransaction transaction = manager.beginTransaction();
         transaction.add(containerViewId, newFragment, newFragment.getClass().getSimpleName());
