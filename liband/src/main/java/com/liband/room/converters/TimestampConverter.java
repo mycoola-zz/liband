@@ -2,7 +2,6 @@ package com.liband.room.converters;
 
 import android.arch.persistence.room.TypeConverter;
 
-import com.exceedgulf.alainzoo.constants.Constants;
 
 import java.text.DateFormat;
 import java.text.ParseException;
@@ -12,7 +11,6 @@ import java.util.Locale;
 
 
 public class TimestampConverter {
-//    static DateFormat df = new SimpleDateFormat(Constants.TIME_STAMP_FORMAT, Locale.ENGLISH);
 
     @TypeConverter
     public static Date fromTimestamp(DateFormat dateFormat, String value) {
