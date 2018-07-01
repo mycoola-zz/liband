@@ -60,7 +60,7 @@ public class App extends Application implements Application.ActivityLifecycleCal
         return isNavigationRunning;
     }
 
-    public Retrofit getRetrofitAdapter() {
+    public Retrofit getRetrofitAdapter(String baseUrl) {
         if (retrofitAdapter == null) {
             final HttpLoggingInterceptor logging = new HttpLoggingInterceptor();
             logging.setLevel(HttpLoggingInterceptor.Level.BODY);
@@ -89,6 +89,7 @@ public class App extends Application implements Application.ActivityLifecycleCal
             builder.readTimeout(240, TimeUnit.SECONDS);
             builder.writeTimeout(240, TimeUnit.SECONDS);
             retrofitAdapter = new Retrofit.Builder()
+                    .baseUrl(baseUrl)
                     .addConverterFactory(GsonConverterFactory.create())
                     .client(builder.build())
                     .build();
@@ -96,7 +97,7 @@ public class App extends Application implements Application.ActivityLifecycleCal
         return retrofitAdapter;
     }
 
-    public Retrofit getServiceRetrofitAdapter() {
+    public Retrofit getServiceRetrofitAdapter(String baseUrl) {
         if (retrofitAdapter == null) {
             final HttpLoggingInterceptor logging = new HttpLoggingInterceptor();
             logging.setLevel(HttpLoggingInterceptor.Level.BODY);
@@ -125,6 +126,7 @@ public class App extends Application implements Application.ActivityLifecycleCal
             builder.readTimeout(3000, TimeUnit.MILLISECONDS);
             builder.writeTimeout(3000, TimeUnit.MILLISECONDS);
             retrofitAdapter = new Retrofit.Builder()
+                    .baseUrl(baseUrl)
                     .addConverterFactory(GsonConverterFactory.create())
                     .client(builder.build())
                     .build();
