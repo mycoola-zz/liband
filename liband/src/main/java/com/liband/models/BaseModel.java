@@ -5,6 +5,8 @@ import android.arch.persistence.room.Entity;
 import android.arch.persistence.room.TypeConverters;
 import android.support.annotation.NonNull;
 
+import com.google.gson.annotations.Expose;
+import com.google.gson.annotations.SerializedName;
 import com.liband.room.converters.TimestampConverter;
 import com.liband.utils.LangUtils;
 
@@ -16,6 +18,8 @@ public class BaseModel {
 
     @NonNull
     @ColumnInfo(name = "id")
+    @SerializedName("Id")
+    @Expose
     private Integer id;
 
     @NonNull
