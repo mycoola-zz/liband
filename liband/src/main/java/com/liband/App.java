@@ -89,7 +89,6 @@ public class App extends Application implements Application.ActivityLifecycleCal
             builder.readTimeout(240, TimeUnit.SECONDS);
             builder.writeTimeout(240, TimeUnit.SECONDS);
             retrofitAdapter = new Retrofit.Builder()
-                    .baseUrl("")
                     .addConverterFactory(GsonConverterFactory.create())
                     .client(builder.build())
                     .build();
@@ -126,7 +125,6 @@ public class App extends Application implements Application.ActivityLifecycleCal
             builder.readTimeout(3000, TimeUnit.MILLISECONDS);
             builder.writeTimeout(3000, TimeUnit.MILLISECONDS);
             retrofitAdapter = new Retrofit.Builder()
-                    .baseUrl("")
                     .addConverterFactory(GsonConverterFactory.create())
                     .client(builder.build())
                     .build();
