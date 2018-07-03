@@ -2,14 +2,18 @@ package com.liband;
 
 import android.annotation.SuppressLint;
 import android.content.Intent;
+import android.graphics.drawable.Drawable;
 import android.os.Build;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentTransaction;
+import android.support.v7.app.ActionBarDrawerToggle;
 import android.support.v7.app.AppCompatActivity;
+import android.support.v7.widget.Toolbar;
 import android.text.Html;
+import android.text.TextUtils;
 import android.view.View;
 import android.view.ViewGroup;
 import android.view.Window;
@@ -78,6 +82,32 @@ public abstract class BaseActivity extends AppCompatActivity implements View.OnC
         final Intent intent = new Intent(this, anotherActivity);
         intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP | Intent.FLAG_ACTIVITY_CLEAR_TASK | Intent.FLAG_ACTIVITY_NEW_TASK);
         startActivity(intent);
+    }
+
+
+    public void setToolbarWithCenterTitle(Toolbar toolbar, TextView toolbarTitle, final String title, int color,
+                                          final Drawable navigationIcon) {
+        setSupportActionBar(toolbar);
+        if (!TextUtils.isEmpty(title)) {
+            toolbarTitle.setVisibility(View.VISIBLE);
+            toolbarTitle.setText(title);
+        } else {
+            toolbarTitle.setText("");
+            toolbarTitle.setVisibility(View.GONE);
+        }
+        toolbar.setBackgroundColor(color);
+        updateStatusBarColor(color);
+        getSupportActionBar().setDisplayShowTitleEnabled(false);
+        if (navigationIcon != null) {
+            getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+            toolbar.setNavigationIcon(navigationIcon);
+            toolbar.setNavigationOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    onBackPressed();
+                }
+            });
+        }
     }
 
 }
