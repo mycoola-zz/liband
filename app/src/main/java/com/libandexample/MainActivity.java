@@ -8,6 +8,7 @@ import android.support.v7.app.AppCompatActivity;
 import com.liband.BaseActivity;
 import com.liband.constants.TagsName;
 import com.liband.utils.DrawablesUtil;
+import com.liband.utils.Utils;
 import com.libandexample.databinding.ActivityMainBinding;
 
 public class MainActivity extends BaseActivity {
@@ -20,5 +21,6 @@ public class MainActivity extends BaseActivity {
         DrawablesUtil.changeBackgroundDrawable(activityMainBinding.editText, getResources().getColor(android.R.color.transparent),
                 getResources().getColor(android.R.color.black), 10, 20);
         startAnotherActivity(Main2Activity.class);
+
     }
 }

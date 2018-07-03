@@ -45,7 +45,7 @@ public abstract class BaseActivity extends AppCompatActivity implements View.OnC
         transaction.commitAllowingStateLoss();
     }
 
-    public void addFragmentWithHideAnotherFragment(int containerViewId, Fragment hideFragment, Fragment newFragment) {
+    public void addFragment(int containerViewId, Fragment hideFragment, Fragment newFragment) {
         final FragmentManager manager = getSupportFragmentManager();
         final FragmentTransaction transaction = manager.beginTransaction();
         transaction.add(containerViewId, newFragment, newFragment.getClass().getSimpleName());
@@ -60,6 +60,10 @@ public abstract class BaseActivity extends AppCompatActivity implements View.OnC
         final FragmentTransaction transaction = manager.beginTransaction();
         transaction.replace(containerViewId, fragment, fragment.getClass().getSimpleName());
         transaction.commitAllowingStateLoss();
+    }
+
+    public Fragment getcurrentFragment(int containerViewId) {
+        return getSupportFragmentManager().findFragmentById(containerViewId);
     }
 
     public void updateStatusBarColor(int color) {
