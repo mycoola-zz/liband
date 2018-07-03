@@ -96,7 +96,6 @@ public abstract class BaseActivity extends AppCompatActivity implements View.OnC
             toolbarTitle.setVisibility(View.GONE);
         }
         toolbar.setBackgroundColor(color);
-        updateStatusBarColor(color);
         getSupportActionBar().setDisplayShowTitleEnabled(false);
         if (navigationIcon != null) {
             getSupportActionBar().setDisplayHomeAsUpEnabled(true);
