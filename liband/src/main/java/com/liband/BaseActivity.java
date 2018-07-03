@@ -85,8 +85,8 @@ public abstract class BaseActivity extends AppCompatActivity implements View.OnC
     }
 
 
-    public void setToolbarWithCenterTitle(Toolbar toolbar, TextView toolbarTitle, final String title, int color,
-                                          final Drawable navigationIcon) {
+    public void setToolbar(Toolbar toolbar, TextView toolbarTitle, final String title, int color,
+                           final Drawable navigationIcon) {
         setSupportActionBar(toolbar);
         if (!TextUtils.isEmpty(title)) {
             toolbarTitle.setVisibility(View.VISIBLE);
