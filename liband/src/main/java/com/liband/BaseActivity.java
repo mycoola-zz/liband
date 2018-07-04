@@ -78,12 +78,13 @@ public abstract class BaseActivity extends AppCompatActivity implements View.OnC
         }
     }
 
-    public void startAnotherActivity(Class anotherActivity) {
+    public void startAnotherActivity(Class anotherActivity, boolean withTopClear) {
         final Intent intent = new Intent(this, anotherActivity);
-        intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP | Intent.FLAG_ACTIVITY_CLEAR_TASK | Intent.FLAG_ACTIVITY_NEW_TASK);
+        if (withTopClear) {
+            intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP | Intent.FLAG_ACTIVITY_CLEAR_TASK | Intent.FLAG_ACTIVITY_NEW_TASK);
+        }
         startActivity(intent);
     }
-
 
     public void setToolbar(Toolbar toolbar, TextView toolbarTitle, final String title, int color,
                            final Drawable navigationIcon) {
