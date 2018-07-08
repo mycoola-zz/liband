@@ -9,11 +9,13 @@ import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentTransaction;
+import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBarDrawerToggle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.text.Html;
 import android.text.TextUtils;
+import android.view.Gravity;
 import android.view.View;
 import android.view.ViewGroup;
 import android.view.Window;
@@ -87,7 +89,7 @@ public abstract class BaseActivity extends AppCompatActivity implements View.OnC
     }
 
     public void setToolbar(Toolbar toolbar, TextView toolbarTitle, final String title, int color,
-                           final Drawable navigationIcon) {
+                           final Drawable navigationIcon, final DrawerLayout drawerLayout) {
         setSupportActionBar(toolbar);
         if (!TextUtils.isEmpty(title)) {
             toolbarTitle.setVisibility(View.VISIBLE);
@@ -105,6 +107,17 @@ public abstract class BaseActivity extends AppCompatActivity implements View.OnC
                 @Override
                 public void onClick(View v) {
                     onBackPressed();
+                }
+            });
+        } else {
+            getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+            toolbar.setNavigationOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+
+                    if (!drawerLayout.isDrawerOpen(Gravity.START)) {
+                        drawerLayout.openDrawer(Gravity.START);
+                    }
                 }
             });
         }
