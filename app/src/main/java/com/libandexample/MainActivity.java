@@ -20,7 +20,7 @@ public class MainActivity extends BaseActivity {
         activityMainBinding = DataBindingUtil.setContentView(this, R.layout.activity_main);
         DrawablesUtil.changeBackgroundDrawable(activityMainBinding.editText, getResources().getColor(android.R.color.transparent),
                 getResources().getColor(android.R.color.black), 10, 20);
-        startAnotherActivity(Main2Activity.class);
+        startAnotherActivity(Main2Activity.class,false);
 
     }
 }
