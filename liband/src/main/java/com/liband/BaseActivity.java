@@ -99,11 +99,10 @@ public abstract class BaseActivity extends AppCompatActivity implements View.OnC
             toolbarTitle.setVisibility(View.GONE);
         }
         toolbar.setBackgroundColor(color);
-
-        toolbar.setNavigationIcon(navigationIcon);
+        getSupportActionBar().setDisplayShowTitleEnabled(false);
         if (navigationIcon != null) {
-            getSupportActionBar().setDisplayHomeAsUpEnabled(false);
-
+            getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+            toolbar.setNavigationIcon(navigationIcon);
             toolbar.setNavigationOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
@@ -112,7 +111,6 @@ public abstract class BaseActivity extends AppCompatActivity implements View.OnC
             });
         } else {
             getSupportActionBar().setDisplayHomeAsUpEnabled(true);
-
             toolbar.setNavigationOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
