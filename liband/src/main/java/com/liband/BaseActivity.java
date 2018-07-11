@@ -20,6 +20,8 @@ import android.widget.TextView;
 
 import com.liband.utils.LangUtils;
 
+import java.util.Objects;
+
 public abstract class BaseActivity extends AppCompatActivity implements View.OnClickListener {
 
     private final String TAG = BaseActivity.class.getSimpleName();
@@ -95,7 +97,7 @@ public abstract class BaseActivity extends AppCompatActivity implements View.OnC
             toolbarTitle.setVisibility(View.GONE);
         }
         toolbar.setBackgroundColor(color);
-        getSupportActionBar().setDisplayShowTitleEnabled(false);
+        Objects.requireNonNull(getSupportActionBar()).setDisplayShowTitleEnabled(false);
         if (navigationIcon != null) {
             getSupportActionBar().setDisplayHomeAsUpEnabled(true);
             toolbar.setNavigationIcon(navigationIcon);
@@ -109,7 +111,7 @@ public abstract class BaseActivity extends AppCompatActivity implements View.OnC
 
            getSupportActionBar().setHomeButtonEnabled(true);
            getSupportActionBar().setDisplayHomeAsUpEnabled(true);
-            getSupportActionBar().setHomeAsUpIndicator(R.drawable.ic_nav_icon);
+            getSupportActionBar().setHomeAsUpIndicator(R.drawable.nav_icon);
             toolbar.setNavigationOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {

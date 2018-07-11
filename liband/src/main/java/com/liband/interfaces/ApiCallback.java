@@ -5,6 +5,6 @@ import java.util.List;
 
 
 public interface ApiCallback<T> extends FailureListener {
-    public void onSuccess(final ArrayList<T> resultList, boolean isLoadYes);
+    void onSuccess(final ArrayList<T> resultList, boolean isLoadYes);
 
 }

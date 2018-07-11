@@ -8,6 +8,8 @@ import android.view.ViewGroup;
 
 import com.liband.utils.LangUtils;
 
+import java.util.Objects;
+
 
 public abstract class BaseFragment extends Fragment implements View.OnClickListener {
 
@@ -20,7 +22,7 @@ public abstract class BaseFragment extends Fragment implements View.OnClickListe
 
     @Override
     public void onViewCreated(View view, Bundle savedInstanceState) {
-        getResources().updateConfiguration(LangUtils.getLocal(getActivity()), getResources().getDisplayMetrics());
+        getResources().updateConfiguration(LangUtils.getLocal(Objects.requireNonNull(getActivity())), getResources().getDisplayMetrics());
         super.onViewCreated(view, savedInstanceState);
         initView(view);
 
@@ -34,7 +36,7 @@ public abstract class BaseFragment extends Fragment implements View.OnClickListe
     @Override
     public void onResume() {
         super.onResume();
-        getResources().updateConfiguration(LangUtils.getLocal(getActivity()), getResources().getDisplayMetrics());
+        getResources().updateConfiguration(LangUtils.getLocal(Objects.requireNonNull(getActivity())), getResources().getDisplayMetrics());
     }
 
 

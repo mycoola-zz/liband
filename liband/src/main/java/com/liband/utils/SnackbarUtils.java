@@ -1,9 +1,9 @@
 package com.liband.utils;
 
-import android.app.Activity;
 import android.graphics.Color;
 import android.support.design.widget.Snackbar;
 import android.support.v4.content.ContextCompat;
+import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.TextView;
 
@@ -14,7 +14,7 @@ public class SnackbarUtils {
 
     private static Snackbar snackbar;
 
-    public static void loadSnackBar(String message, Activity activity, int color) {
+    public static void loadSnackBar(String message, AppCompatActivity activity, int color) {
         if (activity != null) {
             snackbar = Snackbar.make(
                     activity.findViewById(android.R.id.content), message,
@@ -31,7 +31,7 @@ public class SnackbarUtils {
 //            snackbar.setActionTextColor(activity.getResources().getColor(
 //                    R.color.white));
             View snackbarView = snackbar.getView();
-            final TextView tv = (TextView) snackbarView.findViewById(R.id.snackbar_text);
+            final TextView tv = snackbarView.findViewById(R.id.snackbar_text);
             tv.setTextColor(Color.WHITE);
             final int textSize = (int) activity.getResources().getDimension(R.dimen._5ssp);
             tv.setTextSize(textSize);
@@ -41,7 +41,7 @@ public class SnackbarUtils {
     }
 
 
-    public static void loadSnackBar(final View view, String message, Activity activity, int color) {
+    public static void loadSnackBar(final View view, String message, AppCompatActivity activity, int color) {
         if (activity != null) {
             snackbar = Snackbar.make(
                     view, message,
@@ -58,7 +58,7 @@ public class SnackbarUtils {
 //            snackbar.setActionTextColor(activity.getResources().getColor(
 //                    R.color.white));
             View snackbarView = snackbar.getView();
-            final TextView tv = (TextView) snackbarView.findViewById(R.id.snackbar_text);
+            final TextView tv = snackbarView.findViewById(R.id.snackbar_text);
             tv.setTextColor(Color.WHITE);
             final int textSize = (int) activity.getResources().getDimension(R.dimen._5ssp);
             tv.setTextSize(textSize);

@@ -170,7 +170,7 @@ public class StringUtils {
         // index on index that the match was found
         int textIndex = -1;
         int replaceIndex = -1;
-        int tempIndex = -1;
+        int tempIndex;
 
         // index of replace array that will replace the search string found
         // NOTE: logic duplicated below START
@@ -226,7 +226,6 @@ public class StringUtils {
 
             textIndex = -1;
             replaceIndex = -1;
-            tempIndex = -1;
             // find the next earliest match
             // NOTE: logic mostly duplicated above START
             for (int i = 0; i < searchLength; i++) {
@@ -258,7 +257,7 @@ public class StringUtils {
             return result;
         }
 
-        return replaceEach(result, searchList, replacementList, repeat, timeToLive - 1);
+        return replaceEach(result, searchList, replacementList, true, timeToLive - 1);
     }
 
     public static String replaceChars(String str, char searchChar, char replaceChar) {

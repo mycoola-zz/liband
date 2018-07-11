@@ -4,6 +4,7 @@ package com.liband;
 import android.app.Activity;
 import android.app.Application;
 import android.os.Bundle;
+import android.support.annotation.NonNull;
 
 import com.liband.utils.LangUtils;
 
@@ -69,7 +70,7 @@ public class App extends Application implements Application.ActivityLifecycleCal
             builder.addInterceptor(logging);
             builder.addInterceptor(new Interceptor() {
                 @Override
-                public Response intercept(Chain chain) throws IOException {
+                public Response intercept(@NonNull Chain chain) throws IOException {
 
                     Request original = chain.request();
                     HttpUrl originalHttpUrl = original.url();
@@ -106,7 +107,7 @@ public class App extends Application implements Application.ActivityLifecycleCal
             builder.addInterceptor(logging);
             builder.addInterceptor(new Interceptor() {
                 @Override
-                public Response intercept(Chain chain) throws IOException {
+                public Response intercept(@NonNull Chain chain) throws IOException {
 
                     Request original = chain.request();
                     HttpUrl originalHttpUrl = original.url();
