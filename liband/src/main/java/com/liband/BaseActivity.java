@@ -110,7 +110,6 @@ public abstract class BaseActivity extends AppCompatActivity implements View.OnC
                 }
             });
         } else {
-            getSupportActionBar().setDisplayHomeAsUpEnabled(true);
             toolbar.setNavigationOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
