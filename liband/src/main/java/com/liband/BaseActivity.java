@@ -113,7 +113,7 @@ public abstract class BaseActivity extends AppCompatActivity implements View.OnC
 
            getSupportActionBar().setHomeButtonEnabled(true);
            getSupportActionBar().setDisplayHomeAsUpEnabled(true);
-
+            getSupportActionBar().setHomeAsUpIndicator(R.drawable.ic_menu_icon);
             toolbar.setNavigationOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
