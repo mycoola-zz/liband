@@ -51,12 +51,10 @@ public class SharedPrefceUtils {
         editor.commit();
     }
 
-    @SuppressWarnings("unchecked")
     public <T> T get(String key) {
         return (T) sharedPreferences.getAll().get(key);
     }
 
-    @SuppressWarnings("unchecked")
     public <T> T get(String key, T defValue) {
         final T returnValue = (T) sharedPreferences.getAll().get(key);
         return returnValue == null ? defValue : returnValue;
