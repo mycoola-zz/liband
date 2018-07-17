@@ -14,4 +14,10 @@
         <item name="android:maxHeight">@dimen/_18sdp</item>
     </style>
 
+
+    <style name="CustomButton" parent="Widget.AppCompat.Button">
+        <item name="android:background">@drawable/custom_button</item>
+        <item name="android:textColor">#FFF</item>
+        <item name="android:stateListAnimator">@null</item>
+    </style>
 </resources>
