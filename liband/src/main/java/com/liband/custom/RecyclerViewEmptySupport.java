@@ -4,9 +4,11 @@ import android.content.Context;
 import android.support.v7.widget.RecyclerView;
 import android.util.AttributeSet;
 import android.view.View;
+import android.widget.ProgressBar;
 
 public class RecyclerViewEmptySupport extends RecyclerView {
     private View emptyView;
+    private ProgressBar progressbar;
 
     public AdapterDataObserver emptyObserver = new AdapterDataObserver() {
         @Override
@@ -14,9 +16,13 @@ public class RecyclerViewEmptySupport extends RecyclerView {
             Adapter<?> adapter = getAdapter();
             if (adapter != null && emptyView != null) {
                 if (adapter.getItemCount() == 0) {
+                    progressbar.setVisibility(View.VISIBLE);
                     emptyView.setVisibility(View.VISIBLE);
                     RecyclerViewEmptySupport.this.setVisibility(View.GONE);
+
+
                 } else {
+                    progressbar.setVisibility(View.GONE);
                     emptyView.setVisibility(View.GONE);
                     RecyclerViewEmptySupport.this.setVisibility(View.VISIBLE);
                 }
@@ -53,5 +59,17 @@ public class RecyclerViewEmptySupport extends RecyclerView {
 
     public void removeEmptyView() {
         this.emptyView = null;
+    }
+
+    public ProgressBar getProgressbar() {
+        return progressbar;
+    }
+
+    public void setProgressbar(ProgressBar progressbar) {
+        this.progressbar = progressbar;
+    }
+
+    public void removeProgressbar() {
+        this.progressbar = null;
     }
 }
