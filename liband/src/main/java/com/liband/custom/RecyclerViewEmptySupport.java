@@ -14,7 +14,7 @@ public class RecyclerViewEmptySupport extends RecyclerView {
         @Override
         public void onChanged() {
             Adapter<?> adapter = getAdapter();
-            if (adapter != null && emptyView != null) {
+            if (adapter != null && emptyView != null && progressbar!=null) {
                 if (adapter.getItemCount() == 0) {
                     progressbar.setVisibility(View.VISIBLE);
                     emptyView.setVisibility(View.VISIBLE);
