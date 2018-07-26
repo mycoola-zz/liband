@@ -32,4 +32,14 @@
     <string name="error">Error</string>
     <string name="clear">Clear</string>
     <string name="search">Search</string>
+    <string name="facebook">Facebook</string>
+    <string name="twitter">Twitter</string>
+    <string name="personal_information">Personal Information</string>
+    <string name="country_code">Country code</string>
+    <string name="phone">Phone</string>
+    <string name="no_data_available">No Data Available</string>
+    <string name="faq">FAQ</string>
+    <string name="street">Street</string>
+    <string name="city">City</string>
+    <string name="zip_code">Zip Code</string>
 </resources>

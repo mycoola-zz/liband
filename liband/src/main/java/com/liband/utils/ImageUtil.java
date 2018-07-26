@@ -21,7 +21,7 @@ public class ImageUtil {
             final Target target = new Target() {
                 @Override
                 public void onPrepareLoad(Drawable arg0) {
-                    imageView.setBackgroundDrawable(activity.getDrawable(R.drawable.empty_image));
+                    imageView.setBackgroundDrawable(activity.getDrawable(R.drawable.safe_image));
                 }
 
                 @Override
@@ -33,7 +33,7 @@ public class ImageUtil {
 
                 @Override
                 public void onBitmapFailed(Drawable arg0) {
-                    imageView.setBackgroundDrawable(activity.getDrawable(R.drawable.empty_image));
+                    imageView.setBackgroundDrawable(activity.getDrawable(R.drawable.safe_image));
                 }
             };
             imageView.setTag(target);
