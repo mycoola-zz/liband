@@ -4,6 +4,7 @@ import android.content.Context;
 import android.content.res.Configuration;
 import android.content.res.Resources;
 
+import com.liband.App;
 import com.liband.constants.Constants;
 
 import java.util.Locale;
@@ -12,7 +13,7 @@ import java.util.Locale;
 public class LangUtils {
 
     public static Configuration getLocal(Context context) {
-        final String lang = SharedPrefceUtils.getInstance().get(Constants.INSTANCE.getAPP_LANGUAGE(), "en");
+        final String lang = SharedPrefceUtils.getInstance(App.getApp()).get(Constants.APP_LANG, "en");
         // final String lang = "ar";
         //final Configuration config = new Configuration();
         final Locale locale = new Locale(lang);
@@ -29,7 +30,7 @@ public class LangUtils {
     }
 
     public static String getCurrentLanguage() {
-        return SharedPrefceUtils.getInstance().get(Constants.INSTANCE.getAPP_LANGUAGE(), "en");
+        return SharedPrefceUtils.getInstance(App.getApp()).get(Constants.APP_LANG, "en");
     }
 
 //

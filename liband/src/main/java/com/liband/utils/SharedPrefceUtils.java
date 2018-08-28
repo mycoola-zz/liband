@@ -3,9 +3,6 @@ package com.liband.utils;
 import android.app.Application;
 import android.content.Context;
 import android.content.SharedPreferences;
-import android.util.Base64;
-
-import com.liband.App;
 
 public class SharedPrefceUtils {
     private static SharedPrefceUtils instance;
