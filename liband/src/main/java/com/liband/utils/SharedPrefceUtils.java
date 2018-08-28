@@ -1,5 +1,6 @@
 package com.liband.utils;
 
+import android.app.Application;
 import android.content.Context;
 import android.content.SharedPreferences;
 import android.util.Base64;
@@ -7,21 +8,20 @@ import android.util.Base64;
 import com.liband.App;
 
 public class SharedPrefceUtils {
-    private static final String SHARED_PREFS_NAME = App.getApp().getPackageName();
     private static SharedPrefceUtils instance;
 
     private SharedPreferences sharedPreferences;
 
-    public static synchronized SharedPrefceUtils getInstance() {
+    public static synchronized SharedPrefceUtils getInstance(Application application) {
         if (instance == null) {
-            instance = new SharedPrefceUtils();
+            instance = new SharedPrefceUtils(application);
         }
         return instance;
     }
 
-    private SharedPrefceUtils() {
+    private SharedPrefceUtils(Application application) {
         instance = this;
-        sharedPreferences = App.getApp().getSharedPreferences(SHARED_PREFS_NAME, Context.MODE_PRIVATE);
+        sharedPreferences = application.getSharedPreferences(application.getPackageName(), Context.MODE_PRIVATE);
     }
 
     public void delete(String key) {
