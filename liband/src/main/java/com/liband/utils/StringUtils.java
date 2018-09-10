@@ -17,7 +17,15 @@
 package com.liband.utils;
 
 
+import android.os.Build;
+import android.text.TextUtils;
+
 import com.liband.App;
+
+import java.text.DateFormat;
+import java.text.SimpleDateFormat;
+import java.util.Date;
+import java.util.Locale;
 
 public class StringUtils {
     public static final String EMPTY = "";
@@ -338,6 +346,69 @@ public class StringUtils {
 
     public static String getAppString(int key) {
         return App.getApp().getResources().getString(key);
+    }
+
+
+
+    public static boolean isValidMobile(String phone) {
+        return android.util.Patterns.PHONE.matcher(phone).matches();
+    }
+
+    public String getFormatedHtml(final String htmlData) {
+        String dir;
+        String textColor = "#565563";
+        String fontStyle;
+        if (!TextUtils.isEmpty(htmlData)) {
+            dir = "ltr";
+            fontStyle = "<style type=\"text/css\">\n" +
+                    "@font-face {\n" +
+                    "    font-family: MyFont;\n" +
+                    "    src: url(\"file:///android_asset/fonts/avenir_next_regular_en.ttf\")\n" +
+                    "}\n" +
+                    "body {\n" +
+                    "    font-family: MyFont;\n" +
+                    "    font-size: 15px;\n" +
+                    " color:" + textColor + ";\n" +
+                    "    background-color:#ffffff;\n" +
+                    "}\n" +
+                    "\n" +
+                    "\n" +
+                    "\n" +
+                    "    </style>";
+            return "<!DOCTYPE html>\n" +
+                    "<html LANG=\"" + "en" + "\">\n" +
+                    "<head>\n" + fontStyle +
+                    "    \n<meta charset=\"UTF-8\">\n" +
+                    "</head>\n" +
+                    "<body dir=\"" + dir + "\">\n" +
+                    "\n" +
+                    htmlData +
+                    "\n" +
+                    "</body>\n" +
+                    "</html>";
+        } else {
+            return "";
+        }
+
+    }
+
+
+
+
+    public static boolean isValidEmail(CharSequence target) {
+        return target != null && android.util.Patterns.EMAIL_ADDRESS.matcher(target).matches();
+    }
+
+
+    public static String formatDateTime(String oldDate, String oldFormat, String newFormat) {
+        try {
+            DateFormat inputFormat = new SimpleDateFormat(oldFormat, Locale.ENGLISH);
+            DateFormat outputFormat = new SimpleDateFormat(newFormat, Locale.ENGLISH);
+            Date date = inputFormat.parse(oldDate);
+            return outputFormat.format(date);
+        } catch (Exception e) {
+            return oldDate;
+        }
     }
 
 }
