@@ -38,7 +38,7 @@ public class Utils {
         }
     }
 
-    public void hideSoftKeyboard(Context mActivity) {
+    public static void hideSoftKeyboard(Context mActivity) {
         if (mActivity != null && !((AppCompatActivity) mActivity).isFinishing()) {
             final InputMethodManager inputMethodManager = (InputMethodManager) mActivity.getSystemService(AppCompatActivity.INPUT_METHOD_SERVICE);
             if (Objects.requireNonNull(inputMethodManager).isActive()) {
