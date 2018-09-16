@@ -1,5 +1,6 @@
 package com.liband.utils;
 
+import android.app.Application;
 import android.content.Context;
 import android.content.res.Resources;
 import android.net.ConnectivityManager;
@@ -19,8 +20,8 @@ public class Utils {
     /**
      * Converting dp to pixel
      */
-    public static int dpToPx(int dp) {
-        Resources r = App.getApp().getResources();
+    public static int dpToPx(Application application, int dp) {
+        Resources r = application.getResources();
         return Math.round(TypedValue.applyDimension(TypedValue.COMPLEX_UNIT_DIP, dp, r.getDisplayMetrics()));
     }
 
