@@ -1,1 +1,1 @@
-include ':app', ':liband', ':easytabs'
+include ':app', ':liband'

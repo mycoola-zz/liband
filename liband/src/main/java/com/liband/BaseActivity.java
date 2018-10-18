@@ -5,6 +5,7 @@ import android.graphics.drawable.Drawable;
 import android.os.Build;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
+import android.support.v4.app.DialogFragment;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentTransaction;
@@ -70,6 +71,10 @@ public abstract class BaseActivity extends AppCompatActivity implements View.OnC
         return getSupportFragmentManager().findFragmentById(containerViewId);
     }
 
+    private void showDialogFragment(DialogFragment dialogFragment) {
+        dialogFragment.show(getSupportFragmentManager(), dialogFragment.getClass().getSimpleName());
+    }
+
     public void updateStatusBarColor(int color) {
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
             Window window = getWindow();
@@ -109,8 +114,8 @@ public abstract class BaseActivity extends AppCompatActivity implements View.OnC
             });
         } else {
 
-           getSupportActionBar().setHomeButtonEnabled(true);
-           getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+            getSupportActionBar().setHomeButtonEnabled(true);
+            getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
             toolbar.setNavigationOnClickListener(new View.OnClickListener() {
                 @Override

@@ -1,6 +1,7 @@
 package com.liband.fragments;
 
 import android.os.Bundle;
+import android.support.v4.app.DialogFragment;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentTransaction;
@@ -42,9 +43,6 @@ public abstract class BaseFragment extends Fragment implements View.OnClickListe
     }
 
 
-
-
-
     public void addFragment(int containerViewId, Fragment newFragment) {
         final FragmentManager manager = getChildFragmentManager();
         final FragmentTransaction transaction = manager.beginTransaction();
@@ -72,4 +70,9 @@ public abstract class BaseFragment extends Fragment implements View.OnClickListe
     public Fragment getcurrentFragment(int containerViewId) {
         return getChildFragmentManager().findFragmentById(containerViewId);
     }
+
+    private void showDialogFragment(DialogFragment dialogFragment) {
+        dialogFragment.show(getActivity().getSupportFragmentManager(), dialogFragment.getClass().getSimpleName());
+    }
+
 }

@@ -1,0 +1,66 @@
+package com.liband.fragments;
+
+import android.app.Dialog;
+import android.content.DialogInterface;
+import android.os.Bundle;
+import android.support.annotation.Nullable;
+import android.support.v4.app.DialogFragment;
+import android.support.v7.app.AlertDialog;
+import android.view.LayoutInflater;
+import android.view.View;
+import android.view.ViewGroup;
+import android.view.WindowManager;
+import android.widget.EditText;
+
+import com.liband.R;
+import com.liband.constants.TagsName;
+
+class EditNameDialogFragment extends DialogFragment {
+
+    private EditText mEditText;
+
+    public EditNameDialogFragment() {
+        // Empty constructor is required for DialogFragment
+        // Make sure not to add arguments to the constructor
+        // Use `newInstance` instead as shown below
+    }
+
+    public static EditNameDialogFragment newInstance(Bundle bundle) {
+        EditNameDialogFragment frag = new EditNameDialogFragment();
+        frag.setArguments(bundle);
+        return frag;
+    }
+
+    @Override
+    public View onCreateView(LayoutInflater inflater, ViewGroup container,
+                             Bundle savedInstanceState) {
+        return inflater.inflate(R.layout.dailog_fragment_edit_text, container);
+    }
+
+
+    @Override
+    public Dialog onCreateDialog(Bundle savedInstanceState) {
+        String title = getArguments().getString("title");
+        AlertDialog.Builder alertDialogBuilder = new AlertDialog.Builder(getActivity());
+        alertDialogBuilder.setTitle(title);
+        alertDialogBuilder.setMessage("Are you sure?");
+        alertDialogBuilder.setPositiveButton("OK", new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialog, int which) {
+                // on success
+            }
+        });
+        alertDialogBuilder.setNegativeButton("Cancel", new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialog, int which) {
+                if (dialog != null) {
+                    dialog.dismiss();
+                }
+            }
+
+        });
+
+        return alertDialogBuilder.create();
+    }
+
+}

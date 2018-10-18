@@ -8,18 +8,13 @@ import android.os.Environment;
 import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.support.v7.app.AppCompatActivity;
-import android.os.Bundle;
-import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
-
-import com.liband.utils.Utils;
 
 import java.io.File;
 
 public class Main2Activity extends AppCompatActivity {
-    ImageView imageView;
+    private ImageView imageView;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -28,19 +23,16 @@ public class Main2Activity extends AppCompatActivity {
 
         Button button = findViewById(R.id.button);
         imageView = findViewById(R.id.imageView);
-        button.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent("com.intsig.camscanner.ACTION_SCAN");
-                // Or content uri picked from gallery
+        button.setOnClickListener(v -> {
+            Intent intent = new Intent("com.intsig.camscanner.ACTION_SCAN");
+            // Or content uri picked from gallery
 
-                Uri uri = Uri.fromFile(new File(Environment.getExternalStorageDirectory().getPath() + "/source.jpg"));
-                intent.putExtra(Intent.EXTRA_STREAM, uri);
-                intent.putExtra("scanned_image", Environment.getExternalStorageDirectory().getPath() + "/source.jpg");
+            Uri uri = Uri.fromFile(new File(Environment.getExternalStorageDirectory().getPath() + "/source.jpg"));
+            intent.putExtra(Intent.EXTRA_STREAM, uri);
+            intent.putExtra("scanned_image", Environment.getExternalStorageDirectory().getPath() + "/source.jpg");
 //                intent.putExtra("pdf_path", Environment.getExternalStorageDirectory().getPath() + "/source.jpg");
 //                intent.putExtra("org_image", Environment.getExternalStorageDirectory().getPath() + "/source.jpg");
-                startActivityForResult(intent, 100);
-            }
+            startActivityForResult(intent, 100);
         });
     }
 
