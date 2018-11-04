@@ -1,7 +1,6 @@
 package com.liband.utils;
 
 import android.graphics.drawable.GradientDrawable;
-import android.support.v7.widget.DrawableUtils;
 import android.view.View;
 
 public class DrawablesUtil {

@@ -2,7 +2,7 @@ package com.libandexample.courses.udemy.Kotlin.findmyage
 
 import android.annotation.SuppressLint
 import android.os.Bundle
-import android.support.v7.app.AppCompatActivity
+import androidx.appcompat.app.AppCompatActivity
 import android.view.View
 import com.libandexample.R
 import kotlinx.android.synthetic.main.activity_main.*

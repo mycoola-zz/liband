@@ -1,15 +1,16 @@
 package com.liband.utils;
 
-import android.app.Activity;
 import android.os.Build;
 import android.util.Log;
 
 import java.io.PrintWriter;
 import java.io.StringWriter;
 
+import androidx.appcompat.app.AppCompatActivity;
+
 public class ExceptionHandler implements Thread.UncaughtExceptionHandler {
 
-    public ExceptionHandler(Activity context) {
+    public ExceptionHandler(AppCompatActivity context) {
     }
 
     public void uncaughtException(Thread thread, Throwable exception) {

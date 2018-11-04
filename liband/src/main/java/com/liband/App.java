@@ -4,18 +4,14 @@ package com.liband;
 import android.app.Activity;
 import android.app.Application;
 import android.os.Bundle;
-import android.support.annotation.NonNull;
 
 import com.liband.utils.LangUtils;
 
-import java.io.IOException;
 import java.util.concurrent.TimeUnit;
 
 import okhttp3.HttpUrl;
-import okhttp3.Interceptor;
 import okhttp3.OkHttpClient;
 import okhttp3.Request;
-import okhttp3.Response;
 import okhttp3.logging.HttpLoggingInterceptor;
 import retrofit2.Retrofit;
 import retrofit2.converter.gson.GsonConverterFactory;
@@ -26,7 +22,6 @@ public class App extends Application implements Application.ActivityLifecycleCal
     boolean isTempLoggedIn = false;
     private Retrofit retrofitAdapter;
     private Retrofit retrofitAdapterSecond;
-    private boolean isNavigationRunning = false;
 
     public static App getApp() {
         return app;
@@ -52,12 +47,8 @@ public class App extends Application implements Application.ActivityLifecycleCal
         getApp().getResources().updateConfiguration(LangUtils.getLocal(getApp()), getApp().getResources().getDisplayMetrics());
     }
 
-    @Override
-    public void onTerminate() {
-        super.onTerminate();
-    }
-
     public boolean isNavigationRunning() {
+        boolean isNavigationRunning = false;
         return isNavigationRunning;
     }
 
@@ -68,23 +59,20 @@ public class App extends Application implements Application.ActivityLifecycleCal
             final okhttp3.OkHttpClient okHttpClient = new OkHttpClient();
             final OkHttpClient.Builder builder = okHttpClient.newBuilder();
             builder.addInterceptor(logging);
-            builder.addInterceptor(new Interceptor() {
-                @Override
-                public Response intercept(@NonNull Chain chain) throws IOException {
+            builder.addInterceptor(chain -> {
 
-                    Request original = chain.request();
-                    HttpUrl originalHttpUrl = original.url();
+                Request original = chain.request();
+                HttpUrl originalHttpUrl = original.url();
 
-                    HttpUrl url = originalHttpUrl.newBuilder()
-                            .build();
+                HttpUrl url = originalHttpUrl.newBuilder()
+                        .build();
 
-                    // Request customization: add request headers
-                    Request.Builder requestBuilder = original.newBuilder()
-                            .url(url);
+                // Request customization: add request headers
+                Request.Builder requestBuilder = original.newBuilder()
+                        .url(url);
 
-                    Request request = requestBuilder.build();
-                    return chain.proceed(request);
-                }
+                Request request = requestBuilder.build();
+                return chain.proceed(request);
             });
             builder.connectTimeout(240, TimeUnit.SECONDS);
             builder.readTimeout(240, TimeUnit.SECONDS);
@@ -105,23 +93,20 @@ public class App extends Application implements Application.ActivityLifecycleCal
             final okhttp3.OkHttpClient okHttpClient = new OkHttpClient();
             final OkHttpClient.Builder builder = okHttpClient.newBuilder();
             builder.addInterceptor(logging);
-            builder.addInterceptor(new Interceptor() {
-                @Override
-                public Response intercept(@NonNull Chain chain) throws IOException {
+            builder.addInterceptor(chain -> {
 
-                    Request original = chain.request();
-                    HttpUrl originalHttpUrl = original.url();
+                Request original = chain.request();
+                HttpUrl originalHttpUrl = original.url();
 
-                    HttpUrl url = originalHttpUrl.newBuilder()
-                            .build();
+                HttpUrl url = originalHttpUrl.newBuilder()
+                        .build();
 
-                    // Request customization: add request headers
-                    Request.Builder requestBuilder = original.newBuilder()
-                            .url(url);
+                // Request customization: add request headers
+                Request.Builder requestBuilder = original.newBuilder()
+                        .url(url);
 
-                    Request request = requestBuilder.build();
-                    return chain.proceed(request);
-                }
+                Request request = requestBuilder.build();
+                return chain.proceed(request);
             });
             builder.connectTimeout(3000, TimeUnit.MILLISECONDS);
             builder.readTimeout(3000, TimeUnit.MILLISECONDS);

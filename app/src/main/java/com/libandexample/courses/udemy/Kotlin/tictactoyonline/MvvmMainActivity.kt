@@ -11,7 +11,7 @@ import com.google.firebase.database.ValueEventListener
 import com.libandexample.R
 import kotlinx.android.synthetic.main.activity_main_tictactoeonline.*
 
-class MvvmMainActivity : android.support.v7.app.AppCompatActivity() {
+class MvvmMainActivity : androidx.appcompat.app.AppCompatActivity() {
 
     //database instance
     private var database = FirebaseDatabase.getInstance()

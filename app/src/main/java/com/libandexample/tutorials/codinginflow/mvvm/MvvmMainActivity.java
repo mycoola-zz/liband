@@ -1,17 +1,16 @@
 package com.libandexample.tutorials.codinginflow.mvvm;
 
-import android.arch.lifecycle.ViewModelProvider;
 import android.content.Intent;
 import android.os.Bundle;
-import android.support.design.widget.FloatingActionButton;
-import android.support.v7.app.AppCompatActivity;
-import android.support.v7.widget.LinearLayoutManager;
-import android.support.v7.widget.RecyclerView;
-import android.support.v7.widget.helper.ItemTouchHelper;
+import com.google.android.material.floatingactionbutton.FloatingActionButton;
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
+import androidx.recyclerview.widget.ItemTouchHelper;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
-import android.widget.Toast;
+import android.view.View;import android.widget.Toast;
 
 import com.libandexample.R;
 
@@ -40,7 +39,7 @@ public class MvvmMainActivity extends AppCompatActivity {
         final NoteAdapter adapter = new NoteAdapter();
         recyclerView.setAdapter(adapter);
 
-        noteViewModel = ViewModelProvider.of(this).get(NoteViewModel.class);
+//        noteViewModel = ViewModelProvider.of(MvvmMainActivity.this).get(NoteViewModel.class);
         noteViewModel.getAllNotes().observe(this, adapter::setNotes);
 
         new ItemTouchHelper(new ItemTouchHelper.SimpleCallback(0,
@@ -120,4 +119,6 @@ public class MvvmMainActivity extends AppCompatActivity {
                 return super.onOptionsItemSelected(item);
         }
     }
-}
+
+    public void BuClickEvent(View view) {
+    }}

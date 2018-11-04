@@ -4,13 +4,13 @@ import android.app.SearchManager
 import android.content.Context
 import android.content.Intent
 import android.os.Bundle
-import android.support.v7.app.AppCompatActivity
+import androidx.appcompat.app.AppCompatActivity
 import android.view.Menu
 import android.view.MenuItem
 import android.view.View
 import android.view.ViewGroup
 import android.widget.BaseAdapter
-import android.widget.SearchView
+import androidx.appcompat.widget.SearchView
 import android.widget.Toast
 import com.libandexample.R
 import kotlinx.android.synthetic.main.activity_main_note_app.*
@@ -107,7 +107,7 @@ Toast.makeText(this,"onCreate",Toast.LENGTH_LONG).show()
 
           menuInflater.inflate(R.menu.main_menu, menu)
 
-          val sv:SearchView = menu.findItem(R.id.app_bar_search).actionView as SearchView
+          val sv: SearchView = menu.findItem(R.id.app_bar_search).actionView as SearchView
 
           val sm= getSystemService(Context.SEARCH_SERVICE) as SearchManager
           sv.setSearchableInfo(sm.getSearchableInfo(componentName))

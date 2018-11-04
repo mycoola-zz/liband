@@ -1,10 +1,11 @@
 package com.liband.utils;
 
-import android.app.Activity;
 import android.content.ActivityNotFoundException;
 import android.content.Intent;
 import android.net.Uri;
 import android.widget.Toast;
+
+import androidx.appcompat.app.AppCompatActivity;
 
 
 public class IntentUtils {
@@ -66,7 +67,7 @@ public class IntentUtils {
     }
     */
 
-    private static void openWebPage(Activity activity, String url) {
+    private static void openWebPage(AppCompatActivity activity, String url) {
         try {
             Uri webpage = Uri.parse(url);
             Intent myIntent = new Intent(Intent.ACTION_VIEW, webpage);
@@ -77,7 +78,7 @@ public class IntentUtils {
         }
     }
 
-    public static void openFacebook(Activity activity, String username) {
+    public static void openFacebook(AppCompatActivity activity, String username) {
         try {
             Intent myIntent = new Intent(Intent.ACTION_VIEW, Uri.parse("fb://page/" + username));
             activity.startActivity(myIntent);
@@ -87,7 +88,7 @@ public class IntentUtils {
         }
     }
 
-    public static void openInstagram(Activity activity, String username) {
+    public static void openInstagram(AppCompatActivity activity, String username) {
         try {
             Intent myIntent = new Intent(Intent.ACTION_VIEW, Uri.parse("instagram://user?username=" + username));
             activity.startActivity(myIntent);
@@ -97,7 +98,7 @@ public class IntentUtils {
         }
     }
 
-    public static void openTwitter(Activity activity, String username) {
+    public static void openTwitter(AppCompatActivity activity, String username) {
         try {
             Intent myIntent = new Intent(Intent.ACTION_VIEW, Uri.parse("twitter://user?screen_name=" + username));
             activity.startActivity(myIntent);

@@ -17,7 +17,6 @@
 package com.liband.utils;
 
 
-import android.os.Build;
 import android.text.TextUtils;
 
 import com.liband.App;
@@ -51,7 +50,7 @@ public class StringUtils {
             return true;
         }
         for (int i = 0; i < strLen; i++) {
-            if ((Character.isWhitespace(str.charAt(i)) == false)) {
+            if ((!Character.isWhitespace(str.charAt(i)))) {
                 return false;
             }
         }
@@ -121,7 +120,7 @@ public class StringUtils {
         int increase = replacement.length() - replLength;
         increase = (increase < 0 ? 0 : increase);
         increase *= (max < 0 ? 16 : (max > 64 ? 64 : max));
-        StringBuffer buf = new StringBuffer(text.length() + increase);
+        StringBuilder buf = new StringBuilder(text.length() + increase);
         while (end != -1) {
             buf.append(text.substring(start, end)).append(replacement);
             start = end + replLength;
@@ -221,7 +220,7 @@ public class StringUtils {
         // have upper-bound at 20% increase, then let Java take over
         increase = Math.min(increase, text.length() / 5);
 
-        StringBuffer buf = new StringBuffer(text.length() + increase);
+        StringBuilder buf = new StringBuilder(text.length() + increase);
 
         while (textIndex != -1) {
 
@@ -285,7 +284,7 @@ public class StringUtils {
         boolean modified = false;
         int replaceCharsLength = replaceChars.length();
         int strLength = str.length();
-        StringBuffer buf = new StringBuffer(strLength);
+        StringBuilder buf = new StringBuilder(strLength);
         for (int i = 0; i < strLength; i++) {
             char ch = str.charAt(i);
             int index = searchChars.indexOf(ch);
@@ -305,11 +304,9 @@ public class StringUtils {
     }
 
     public static String overlayString(String text, String overlay, int start, int end) {
-        return new StringBuffer(start + overlay.length() + text.length() - end + 1)
-                .append(text.substring(0, start))
-                .append(overlay)
-                .append(text.substring(end))
-                .toString();
+        return text.substring(0, start) +
+                overlay +
+                text.substring(end);
     }
 
     public static String overlay(String str, String overlay, int start, int end) {
@@ -337,11 +334,9 @@ public class StringUtils {
             start = end;
             end = temp;
         }
-        return new StringBuffer(len + start - end + overlay.length() + 1)
-                .append(str.substring(0, start))
-                .append(overlay)
-                .append(str.substring(end))
-                .toString();
+        return str.substring(0, start) +
+                overlay +
+                str.substring(end);
     }
 
     public static String getAppString(int key) {

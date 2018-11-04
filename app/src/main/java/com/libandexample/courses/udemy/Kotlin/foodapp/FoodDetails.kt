@@ -1,6 +1,6 @@
 package com.libandexample.courses.udemy.Kotlin.foodapp
 
-import android.support.v7.app.AppCompatActivity
+import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import com.libandexample.R
 import kotlinx.android.synthetic.main.activity_food_details.*

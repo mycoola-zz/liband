@@ -1,10 +1,11 @@
 package com.liband.custom;
 
 import android.content.Context;
-import android.support.v7.widget.RecyclerView;
 import android.util.AttributeSet;
 import android.view.View;
 import android.widget.ProgressBar;
+
+import androidx.recyclerview.widget.RecyclerView;
 
 public class RecyclerViewEmptySupport extends RecyclerView {
     private View emptyView;
