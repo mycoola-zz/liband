@@ -25,7 +25,8 @@
             </intent-filter>
         </activity>
 
-        <service android:name="com.libandexample.tutorials.simplifiedcoding.androidnotificationtutorial.MyFirebaseMessagingService">
+        <service android:name="com.libandexample.tutorials.simplifiedcoding.androidnotificationtutorial.MyFirebaseMessagingService"
+            android:permission="">
             <intent-filter>
                 <action android:name="com.google.firebase.INSTANCE_ID_EVENT" />
             </intent-filter>

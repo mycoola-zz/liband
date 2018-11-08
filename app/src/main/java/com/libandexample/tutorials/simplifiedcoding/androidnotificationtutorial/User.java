@@ -1,9 +1,9 @@
 package com.libandexample.tutorials.simplifiedcoding.androidnotificationtutorial;
 
-public class User {
+class User {
 
-    public String email;
-    public String token;
+    private final String email;
+    private final String token;
 
     public User(String email, String token) {
         this.email = email;

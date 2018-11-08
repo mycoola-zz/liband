@@ -11,7 +11,7 @@ import android.view.inputmethod.InputMethodManager;
 
 import java.util.Objects;
 
-public class Utils {
+class Utils {
 
     /**
      * Converting dp to pixel

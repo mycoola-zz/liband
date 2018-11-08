@@ -19,7 +19,7 @@ import retrofit2.converter.gson.GsonConverterFactory;
 
 public class App extends Application implements Application.ActivityLifecycleCallbacks {
     private static App app;
-    boolean isTempLoggedIn = false;
+    private boolean isTempLoggedIn = false;
     private Retrofit retrofitAdapter;
     private Retrofit retrofitAdapterSecond;
 
@@ -48,8 +48,7 @@ public class App extends Application implements Application.ActivityLifecycleCal
     }
 
     public boolean isNavigationRunning() {
-        boolean isNavigationRunning = false;
-        return isNavigationRunning;
+        return false;
     }
 
     public Retrofit getRetrofitAdapter(String baseUrl) {

@@ -2,8 +2,8 @@ package com.libandexample.courses.udemy.Kotlin.findmyage
 
 import android.annotation.SuppressLint
 import android.os.Bundle
-import androidx.appcompat.app.AppCompatActivity
 import android.view.View
+import androidx.appcompat.app.AppCompatActivity
 import com.libandexample.R
 import kotlinx.android.synthetic.main.activity_main.*
 import java.util.*
@@ -25,7 +25,7 @@ class MainActivity : AppCompatActivity() {
         val userDOB: String = etDOB.text.toString()
         val year: Int = Calendar.getInstance().get(Calendar.YEAR)
         val myAge = year - userDOB.toInt()
-        tvShowAge.setText("Your age is " + myAge)
+        tvShowAge.text = "Your age is " + myAge
     }
 
 }

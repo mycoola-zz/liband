@@ -2,16 +2,16 @@ package com.libandexample;
 
 import android.app.Activity;
 import android.content.Intent;
-import android.graphics.Bitmap;
 import android.net.Uri;
-import android.os.Environment;
-import androidx.annotation.Nullable;
-import androidx.appcompat.app.AppCompatActivity;
 import android.os.Bundle;
+import android.os.Environment;
 import android.widget.Button;
 import android.widget.ImageView;
 
 import java.io.File;
+
+import androidx.annotation.Nullable;
+import androidx.appcompat.app.AppCompatActivity;
 
 public class Main2Activity extends AppCompatActivity {
     private ImageView imageView;
@@ -41,13 +41,8 @@ public class Main2Activity extends AppCompatActivity {
         super.onActivityResult(requestCode, resultCode, data);
         if (requestCode == 100) {
             int responseCode = data.getIntExtra("RESULT_OK", -1);
-            if (requestCode == Activity.RESULT_OK) {
-                Bitmap imageBitmap = (Bitmap) data.getExtras().get("data");
-                imageView.setImageBitmap(imageBitmap);
-            } else if (resultCode == Activity.RESULT_FIRST_USER) {
+            if (resultCode == Activity.RESULT_FIRST_USER) {
                 // Fail
-            } else if (resultCode == Activity.RESULT_CANCELED) {
-                // User canceled
             }
         }
     }

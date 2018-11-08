@@ -6,7 +6,7 @@ import androidx.core.app.NotificationManagerCompat;
 
 import com.libandexample.R;
 
-public class NotificationHelper {
+class NotificationHelper {
 
     public static void displayNotification(Context context, String title, String body) {
 

@@ -11,7 +11,7 @@ public class RecyclerViewEmptySupport extends RecyclerView {
     private View emptyView;
     private ProgressBar progressbar;
 
-    public AdapterDataObserver emptyObserver = new AdapterDataObserver() {
+    private final AdapterDataObserver emptyObserver = new AdapterDataObserver() {
         @Override
         public void onChanged() {
             Adapter<?> adapter = getAdapter();

@@ -26,8 +26,8 @@ import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.Locale;
 
-public class StringUtils {
-    public static final String EMPTY = "";
+class StringUtils {
+    private static final String EMPTY = "";
 
     public static final int INDEX_NOT_FOUND = -1;
     private static final int PAD_LIMIT = 8192;
@@ -36,7 +36,7 @@ public class StringUtils {
         super();
     }
 
-    public static boolean isEmpty(String str) {
+    private static boolean isEmpty(String str) {
         return str == null || str.length() == 0;
     }
 
@@ -44,7 +44,7 @@ public class StringUtils {
         return !StringUtils.isEmpty(str);
     }
 
-    public static boolean isBlank(String str) {
+    private static boolean isBlank(String str) {
         int strLen;
         if (str == null || (strLen = str.length()) == 0 || str.equals("null")) {
             return true;
@@ -65,7 +65,7 @@ public class StringUtils {
         return str == null ? EMPTY : str.trim();
     }
 
-    public static String trim(String str) {
+    private static String trim(String str) {
         return str == null ? null : str.trim();
     }
 
@@ -107,7 +107,7 @@ public class StringUtils {
         return replace(text, searchString, replacement, -1);
     }
 
-    public static String replace(String text, String searchString, String replacement, int max) {
+    private static String replace(String text, String searchString, String replacement, int max) {
         if (isEmpty(text) || isEmpty(searchString) || replacement == null || max == 0) {
             return text;
         }

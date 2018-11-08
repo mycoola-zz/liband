@@ -1,7 +1,7 @@
 package com.liband.constants;
 
 
-public class TagsName {
+class TagsName {
     public static final String ID = "id";
     public static final String TITLE = "title";
     public static final String NAME = "name";

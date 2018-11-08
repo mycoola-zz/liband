@@ -3,8 +3,8 @@ package com.libandexample.courses.udemy.Kotlin.getsunset
 import android.annotation.SuppressLint
 import android.os.AsyncTask
 import android.os.Bundle
-import androidx.appcompat.app.AppCompatActivity
 import android.view.View
+import androidx.appcompat.app.AppCompatActivity
 import com.libandexample.R
 import kotlinx.android.synthetic.main.activity_main_getsunset.*
 import org.json.JSONObject
@@ -14,7 +14,7 @@ import java.io.InputStreamReader
 import java.net.HttpURLConnection
 import java.net.URL
 
-class GetSunSetMainActivity : AppCompatActivity() {
+open class GetSunSetMainActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)

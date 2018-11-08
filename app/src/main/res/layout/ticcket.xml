@@ -3,15 +3,15 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-   android:background="@color/gray"
+    android:background="@color/gray"
     android:orientation="vertical">
 
     <LinearLayout
-        android:background="@drawable/background_layout"
-
-        android:layout_margin="3pt"
         android:layout_width="match_parent"
+
         android:layout_height="wrap_content"
+        android:layout_margin="3pt"
+        android:background="@drawable/background_layout"
         android:orientation="vertical">
 
         <TextView
@@ -23,10 +23,10 @@
             android:textSize="18sp" />
 
         <TextView
- android:paddingLeft="10pt"
             android:id="@+id/tvDes"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:paddingLeft="10pt"
             android:text="Pattern Generator  Create any pattern of your own - tiles, texture, skin, wallpaper, comic effect, website background and more.  Change any artwork of pattern you found into different flavors and call them your own." />
 
         <LinearLayout

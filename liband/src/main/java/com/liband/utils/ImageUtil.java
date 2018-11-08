@@ -16,7 +16,7 @@ import com.squareup.picasso.Picasso;
 import com.squareup.picasso.Target;
 
 
-public class ImageUtil {
+class ImageUtil {
 
     public static void loadImageFromPicasso(final Context activity, final String imageUrl,
                                             final AppCompatImageView imageView) {

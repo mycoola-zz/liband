@@ -14,7 +14,7 @@ import java.util.Date;
 
 
 @Entity(primaryKeys = {"id", "language"})
-public class BaseModel {
+class BaseModel {
 
     @NonNull
     @ColumnInfo(name = "id")

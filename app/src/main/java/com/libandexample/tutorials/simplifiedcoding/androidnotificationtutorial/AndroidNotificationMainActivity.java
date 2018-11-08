@@ -10,14 +10,12 @@ import android.widget.EditText;
 import android.widget.ProgressBar;
 import android.widget.Toast;
 
-import com.google.android.gms.tasks.OnCompleteListener;
-import com.google.android.gms.tasks.Task;
-import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseAuthUserCollisionException;
 import com.libandexample.R;
 
-import androidx.annotation.NonNull;
+import java.util.Objects;
+
 import androidx.appcompat.app.AppCompatActivity;
 
 public class AndroidNotificationMainActivity extends AppCompatActivity {
@@ -46,7 +44,7 @@ public class AndroidNotificationMainActivity extends AppCompatActivity {
             NotificationChannel channel = new NotificationChannel(CHANNEL_ID, CHANNEL_NAME, NotificationManager.IMPORTANCE_DEFAULT);
             channel.setDescription(CHANNEL_DESC);
             NotificationManager manager = getSystemService(NotificationManager.class);
-            manager.createNotificationChannel(channel);
+            Objects.requireNonNull(manager).createNotificationChannel(channel);
         }
 
         progressBar = findViewById(R.id.progressbar);

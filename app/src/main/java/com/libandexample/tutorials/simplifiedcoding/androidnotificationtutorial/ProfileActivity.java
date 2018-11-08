@@ -14,7 +14,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 public class ProfileActivity extends AppCompatActivity {
 
-    public static final String NODE_USERS = "users";
+    private static final String NODE_USERS = "users";
     private FirebaseAuth mAuth;
 
     @Override
@@ -29,8 +29,6 @@ public class ProfileActivity extends AppCompatActivity {
                     if (task.isSuccessful()) {
                         String token = task.getResult().getToken();
                         saveToken(token);
-                    } else {
-
                     }
                 });
     }

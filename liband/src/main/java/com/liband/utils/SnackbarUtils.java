@@ -11,7 +11,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.content.ContextCompat;
 
 
-public class SnackbarUtils {
+class SnackbarUtils {
 
     private static Snackbar snackbar;
 

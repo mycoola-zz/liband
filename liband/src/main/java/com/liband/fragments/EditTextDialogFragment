@@ -1,7 +1,6 @@
 package com.liband.fragments;
 
 import android.app.Dialog;
-import android.content.DialogInterface;
 import android.os.Bundle;
 
 import androidx.appcompat.app.AlertDialog;
@@ -16,7 +15,7 @@ class EditNameDialogFragment extends DialogFragment {
 
     private EditText mEditText;
 
-    public EditNameDialogFragment() {
+    private EditNameDialogFragment() {
         // Empty constructor is required for DialogFragment
         // Make sure not to add arguments to the constructor
         // Use `newInstance` instead as shown below
