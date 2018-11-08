@@ -1,6 +1,6 @@
 package com.liband.interfaces;
 
-interface FailureListener {
+public interface FailureListener {
 
     void onFailure(String message);
 }

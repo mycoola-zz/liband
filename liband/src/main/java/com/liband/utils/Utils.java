@@ -4,14 +4,15 @@ import android.app.Application;
 import android.content.Context;
 import android.content.res.Resources;
 import android.os.Build;
-import androidx.appcompat.app.AppCompatActivity;
 import android.util.TypedValue;
 import android.view.View;
 import android.view.inputmethod.InputMethodManager;
 
 import java.util.Objects;
 
-class Utils {
+import androidx.appcompat.app.AppCompatActivity;
+
+public class Utils {
 
     /**
      * Converting dp to pixel
