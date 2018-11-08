@@ -4,8 +4,6 @@ import android.content.Context;
 import android.graphics.Bitmap;
 import android.graphics.Canvas;
 import android.graphics.drawable.Drawable;
-import androidx.core.content.ContextCompat;
-import androidx.appcompat.widget.AppCompatImageView;
 import android.text.TextUtils;
 import android.view.View;
 
@@ -15,8 +13,11 @@ import com.liband.R;
 import com.squareup.picasso.Picasso;
 import com.squareup.picasso.Target;
 
+import androidx.appcompat.widget.AppCompatImageView;
+import androidx.core.content.ContextCompat;
 
-class ImageUtil {
+
+public class ImageUtil {
 
     public static void loadImageFromPicasso(final Context activity, final String imageUrl,
                                             final AppCompatImageView imageView) {

@@ -8,7 +8,7 @@ import android.widget.Toast;
 import androidx.appcompat.app.AppCompatActivity;
 
 
-class IntentUtils {
+public class IntentUtils {
     /*
     static String url;
     static Intent intent;

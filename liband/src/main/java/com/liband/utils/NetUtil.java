@@ -8,7 +8,7 @@ import android.net.NetworkInfo;
 import java.util.Objects;
 
 
-class NetUtil {
+public class NetUtil {
 
     public static boolean isNetworkAvailable(Context context) {
         ConnectivityManager connectivityManager = (ConnectivityManager) context

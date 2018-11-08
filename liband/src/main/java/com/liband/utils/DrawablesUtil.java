@@ -3,7 +3,7 @@ package com.liband.utils;
 import android.graphics.drawable.GradientDrawable;
 import android.view.View;
 
-class DrawablesUtil {
+public class DrawablesUtil {
 
     public static void changeBackgroundDrawable(View view, int solidColor, int strokeColor, int strokeWidth, float radiusNumber) {
 

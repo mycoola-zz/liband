@@ -7,7 +7,7 @@ import android.content.SharedPreferences;
 public class SharedPrefceUtils {
     private static SharedPrefceUtils instance;
 
-    private final SharedPreferences sharedPreferences;
+    private SharedPreferences sharedPreferences;
 
     public static synchronized SharedPrefceUtils getInstance(Application application) {
         if (instance == null) {

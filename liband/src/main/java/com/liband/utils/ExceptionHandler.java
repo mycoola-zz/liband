@@ -8,7 +8,7 @@ import java.io.StringWriter;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-class ExceptionHandler implements Thread.UncaughtExceptionHandler {
+public class ExceptionHandler implements Thread.UncaughtExceptionHandler {
 
     public ExceptionHandler(AppCompatActivity context) {
     }
