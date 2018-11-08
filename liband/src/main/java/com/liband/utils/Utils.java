@@ -1,5 +1,6 @@
 package com.liband.utils;
 
+import android.app.Activity;
 import android.app.Application;
 import android.content.Context;
 import android.content.res.Resources;
@@ -10,7 +11,6 @@ import android.view.inputmethod.InputMethodManager;
 
 import java.util.Objects;
 
-import androidx.appcompat.app.AppCompatActivity;
 
 public class Utils {
 
@@ -37,11 +37,11 @@ public class Utils {
     }
 
     public static void hideSoftKeyboard(Context mActivity) {
-        if (mActivity != null && !((AppCompatActivity) mActivity).isFinishing()) {
-            final InputMethodManager inputMethodManager = (InputMethodManager) mActivity.getSystemService(AppCompatActivity.INPUT_METHOD_SERVICE);
+        if (mActivity != null && !((Activity) mActivity).isFinishing()) {
+            final InputMethodManager inputMethodManager = (InputMethodManager) mActivity.getSystemService(Activity.INPUT_METHOD_SERVICE);
             if (Objects.requireNonNull(inputMethodManager).isActive()) {
-                if (((AppCompatActivity) mActivity).getCurrentFocus() != null) {
-                    inputMethodManager.hideSoftInputFromWindow(Objects.requireNonNull(((AppCompatActivity) mActivity).getCurrentFocus()).getWindowToken(), 0);
+                if (((Activity) mActivity).getCurrentFocus() != null) {
+                    inputMethodManager.hideSoftInputFromWindow(Objects.requireNonNull(((Activity) mActivity).getCurrentFocus()).getWindowToken(), 0);
                 }
             }
         }

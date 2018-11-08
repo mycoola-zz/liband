@@ -1,5 +1,6 @@
 package com.liband.utils;
 
+import android.app.Activity;
 import android.graphics.Color;
 import android.view.View;
 import android.widget.TextView;
@@ -7,7 +8,6 @@ import android.widget.TextView;
 import com.google.android.material.snackbar.Snackbar;
 import com.liband.R;
 
-import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.content.ContextCompat;
 
 
@@ -15,7 +15,7 @@ public class SnackbarUtils {
 
     private static Snackbar snackbar;
 
-    public static void loadSnackBar(String message, AppCompatActivity activity, int color) {
+    public static void loadSnackBar(String message, Activity activity, int color) {
         if (activity != null) {
             snackbar = Snackbar.make(
                     activity.findViewById(android.R.id.content), message,
@@ -42,7 +42,7 @@ public class SnackbarUtils {
     }
 
 
-    public static void loadSnackBar(final View view, String message, AppCompatActivity activity, int color) {
+    public static void loadSnackBar(final View view, String message, Activity activity, int color) {
         if (activity != null) {
             snackbar = Snackbar.make(
                     view, message,

@@ -11,9 +11,9 @@ import android.widget.ImageView;
 import java.io.File;
 
 import androidx.annotation.Nullable;
-import androidx.appcompat.app.AppCompatActivity;
 
-public class Main2Activity extends AppCompatActivity {
+
+public class Main2Activity extends Activity {
     private ImageView imageView;
 
     @Override
