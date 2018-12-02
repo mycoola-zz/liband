@@ -1,0 +1,107 @@
+{
+  "project_info": {
+    "project_number": "186978520138",
+    "firebase_url": "https://liband-aca6f.firebaseio.com",
+    "project_id": "liband-aca6f",
+    "storage_bucket": "liband-aca6f.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:186978520138:android:b5d75907de594a2d",
+        "android_client_info": {
+          "package_name": "com.google.firebase.codelab.friendlychat"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "186978520138-bgv57k2ei1iag06ehedfp32kke3jkr85.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.google.firebase.codelab.friendlychat",
+            "certificate_hash": "a2edae02c33063f43db3fc8a965cf5dbf7cb46d0"
+          }
+        },
+        {
+          "client_id": "186978520138-448iht1meq2gr1r3o345tjodgac0jupd.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyC1cvPDcjgf-PiweI5rf4mXGP5mijMpTDI"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "186978520138-448iht1meq2gr1r3o345tjodgac0jupd.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:186978520138:android:b1d215b8240f40c6",
+        "android_client_info": {
+          "package_name": "com.libandexample"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "186978520138-ql4h5or99buatmoetdotqi5r1hchfiof.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.libandexample",
+            "certificate_hash": "d946fe380aef36f9deeb61fbe0778116f8db8118"
+          }
+        },
+        {
+          "client_id": "186978520138-ikuper6jfue7sb31lmiit6unico9v9lg.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.libandexample",
+            "certificate_hash": "a2edae02c33063f43db3fc8a965cf5dbf7cb46d0"
+          }
+        },
+        {
+          "client_id": "186978520138-448iht1meq2gr1r3o345tjodgac0jupd.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyC1cvPDcjgf-PiweI5rf4mXGP5mijMpTDI"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "186978520138-448iht1meq2gr1r3o345tjodgac0jupd.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

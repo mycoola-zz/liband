@@ -37,12 +37,13 @@ public class ImageUtil {
                 }
 
                 @Override
-                public void onBitmapFailed(Drawable arg0) {
+                public void onBitmapFailed(Exception e, Drawable errorDrawable) {
                     imageView.setBackgroundDrawable(activity.getDrawable(R.drawable.safe_image));
                 }
+
             };
             imageView.setTag(target);
-            Picasso.with(activity).load(imageUrl).
+            Picasso.get().load(imageUrl).
                     into(target);
         } else {
             imageView.setVisibility(View.VISIBLE);
@@ -58,7 +59,6 @@ public class ImageUtil {
         vectorDrawable.draw(canvas);
         return BitmapDescriptorFactory.fromBitmap(bitmap);
     }
-
 
 
 }
