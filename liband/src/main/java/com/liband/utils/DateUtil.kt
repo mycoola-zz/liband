@@ -71,15 +71,14 @@ object DateUtil {
         return sdfDate.format(cal.time)
     }
 
-    fun GetYearMonthDay(Date: String): IntArray? {
+    fun getYearMonthDay(Date: String): IntArray? {
 
         val parts = Date.split("-".toRegex()).dropLastWhile { it.isEmpty() }.toTypedArray()
         if (parts.size == 3) {
-            val year: Int
+            val year: Int = Integer.parseInt(parts[2])
             val month: Int
             val day: Int
 
-            year = Integer.parseInt(parts[2])
             month = Integer.parseInt(parts[1])
             day = Integer.parseInt(parts[0])
             return intArrayOf(year, month, day)
@@ -102,8 +101,8 @@ object DateUtil {
             val formatTo3 = SimpleDateFormat("EEE, dd MMM, hh:mm aaa", Locale.US)
             val date = formatFrom.parse(dateString)
 
-            val folderName = formatTo.format(date)
-            val folderName2 = formatTo2.format(date)
+            formatTo.format(date)
+            formatTo2.format(date)
 
             return formatTo3.format(date)
 
@@ -115,13 +114,13 @@ object DateUtil {
     }
 
     fun getDateFormatFromAnother(dateFormatOne: String, dateFormattow: String, date: String): String? {
-        try {
+        return try {
             val temp = SimpleDateFormat(dateFormatOne, Locale.US).parse(date)
             val sdfDate = SimpleDateFormat(dateFormattow, Locale.US)// dd/MM/yyyy
-            return sdfDate.format(temp)
+            sdfDate.format(temp)
         } catch (e: ParseException) {
             e.printStackTrace()
-            return null
+            null
         }
 
     }
@@ -148,11 +147,11 @@ object DateUtil {
     }
 
     fun isValid(value: String): Boolean {
-        try {
+        return try {
             SimpleDateFormat("yyyy-MM-dd", Locale.US).parse(value)
-            return true
+            true
         } catch (e: ParseException) {
-            return false
+            false
         }
 
     }

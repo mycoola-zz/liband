@@ -2,7 +2,6 @@ package com.liband
 
 
 import android.app.Application
-import com.liband.utils.LangUtils
 import okhttp3.OkHttpClient
 import okhttp3.logging.HttpLoggingInterceptor
 import retrofit2.Retrofit
@@ -11,7 +10,6 @@ import java.util.concurrent.TimeUnit
 
 
 class App : Application() {
-    var isTempLoggedIn = false
     private var retrofitAdapter: Retrofit? = null
     private val retrofitAdapterSecond: Retrofit? = null
 
@@ -24,9 +22,6 @@ class App : Application() {
     }
 
 
-    fun setLanguage() {
-        app!!.resources.updateConfiguration(LangUtils.getLocal(app!!), app!!.resources.displayMetrics)
-    }
 
     fun getRetrofitAdapter(baseUrl: String): Retrofit? {
         if (retrofitAdapter == null) {

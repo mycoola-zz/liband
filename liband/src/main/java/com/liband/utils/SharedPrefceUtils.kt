@@ -24,31 +24,25 @@ class SharedPrefceUtils private constructor(application: Application) {
 
     fun save(key: String, value: Any?) {
         val editor = editor
-        if (value is Boolean) {
-            editor.putBoolean(key, (value as Boolean?)!!)
-        } else if (value is Int) {
-            editor.putInt(key, (value as Int?)!!)
-        } else if (value is Float) {
-            editor.putFloat(key, (value as Float?)!!)
-        } else if (value is Long) {
-            editor.putLong(key, (value as Long?)!!)
-        } else if (value is String) {
-            editor.putString(key, value as String?)
-        } else if (value is Enum<*>) {
-            editor.putString(key, value.toString())
-        } else if (value != null) {
-            throw RuntimeException("Attempting to save non-supported preference")
+        when {
+            value is Boolean -> editor.putBoolean(key, (value as Boolean?)!!)
+            value is Int -> editor.putInt(key, (value as Int?)!!)
+            value is Float -> editor.putFloat(key, (value as Float?)!!)
+            value is Long -> editor.putLong(key, (value as Long?)!!)
+            value is String -> editor.putString(key, value as String?)
+            value is Enum<*> -> editor.putString(key, value.toString())
+            value != null -> throw RuntimeException("Attempting to save non-supported preference")
         }
 
         editor.commit()
     }
 
-    operator fun <T> get(key: String): T {
-        return sharedPreferences.all[key] as T
+    operator fun <T> get(key: String): Any? {
+        return sharedPreferences.all[key]
     }
 
-    operator fun <T> get(key: String, defValue: T): T {
-        val returnValue = sharedPreferences.all[key] as T
+    operator fun <T> get(key: String, defValue: T): Any? {
+        val returnValue = sharedPreferences.all[key]
         return returnValue ?: defValue
     }
 

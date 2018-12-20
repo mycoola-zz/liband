@@ -171,13 +171,11 @@ class CircleImageView : AppCompatImageView {
         }
 
         try {
-            val bitmap: Bitmap
-
-            if (drawable is ColorDrawable) {
-                bitmap = Bitmap.createBitmap(COLORDRAWABLE_DIMENSION,
+            val bitmap: Bitmap = if (drawable is ColorDrawable) {
+                Bitmap.createBitmap(COLORDRAWABLE_DIMENSION,
                         COLORDRAWABLE_DIMENSION, BITMAP_CONFIG)
             } else {
-                bitmap = Bitmap.createBitmap(drawable.intrinsicWidth,
+                Bitmap.createBitmap(drawable.intrinsicWidth,
                         drawable.intrinsicHeight, BITMAP_CONFIG)
             }
 
@@ -254,10 +252,10 @@ class CircleImageView : AppCompatImageView {
         private val SCALE_TYPE = ImageView.ScaleType.CENTER_CROP
 
         private val BITMAP_CONFIG = Bitmap.Config.ARGB_8888
-        private val COLORDRAWABLE_DIMENSION = 2
+        private const val COLORDRAWABLE_DIMENSION = 2
 
-        private val DEFAULT_BORDER_WIDTH = 0
-        private val DEFAULT_BORDER_COLOR = Color.BLACK
+        private const val DEFAULT_BORDER_WIDTH = 0
+        private const val DEFAULT_BORDER_COLOR = Color.BLACK
     }
 
 }

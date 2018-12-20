@@ -5,7 +5,7 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     android:background="@color/gray"
-    tools:context=".courses.udemy.Kotlin.noteapp.MainActivity">
+    tools:context=".courses.udemy.kotlin.noteapp.MainActivity">
 
     <ListView
         android:id="@+id/lvNotes"

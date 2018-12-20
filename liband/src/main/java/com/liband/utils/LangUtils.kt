@@ -9,14 +9,14 @@ import java.util.*
 
 object LangUtils {
 
-    val currentLanguage: String
+    val currentLanguage: Any?
         get() = SharedPrefceUtils.getInstance(App.app)[Constants.APP_LANG, "en"]
 
     fun getLocal(context: Context): Configuration {
         val lang = SharedPrefceUtils.getInstance(App.app)[Constants.APP_LANG, "en"]
         // final String lang = "ar";
         //final Configuration config = new Configuration();
-        val locale = Locale(lang)
+        val locale = Locale(lang as String?)
         //Locale.setDefault(locale);
         //config.locale = locale;
 
@@ -25,7 +25,6 @@ object LangUtils {
         val configuration = resources.configuration
         configuration.setLocale(locale)
         configuration.setLayoutDirection(locale)
-        resources.updateConfiguration(configuration, resources.displayMetrics)
         return configuration
     }
 

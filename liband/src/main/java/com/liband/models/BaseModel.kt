@@ -11,8 +11,8 @@ import com.liband.utils.LangUtils
 import java.util.*
 
 
-@Entity(primaryKeys = arrayOf("id", "language"))
-internal class BaseModel {
+@Entity(primaryKeys = ["id", "language"])
+class BaseModel {
 
     @NonNull
     @ColumnInfo(name = "id")

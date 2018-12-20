@@ -5,7 +5,7 @@
     android:layout_height="match_parent"
     android:orientation="horizontal"
     android:background="@color/gray"
-    tools:context=".courses.udemy.Kotlin.noteapp.MainActivity">
+    tools:context=".courses.udemy.kotlin.noteapp.MainActivity">
 
     <GridView
         android:horizontalSpacing="5pt"
