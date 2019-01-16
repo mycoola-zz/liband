@@ -77,7 +77,7 @@ class App : MultiDexApplication() {
                 .addConverterFactory(GsonConverterFactory.create())
                 .client(httpClient)
                 .build()
-        return retrofit!!
+        return retrofit
     }
 
 
