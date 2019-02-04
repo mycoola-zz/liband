@@ -38,7 +38,7 @@ class AddNotes : AppCompatActivity() {
 
 
         if(id==0) {
-            val ID = dbManager.Insert(values)
+            val ID = dbManager.insert(values)
             if (ID > 0) {
                 Toast.makeText(this, " note is added", Toast.LENGTH_LONG).show()
                 finish()

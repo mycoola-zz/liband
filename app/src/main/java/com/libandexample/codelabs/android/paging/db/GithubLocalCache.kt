@@ -31,7 +31,7 @@ class GithubLocalCache(
 ) {
 
     /**
-     * Insert a list of repos in the database, on a background thread.
+     * insert a list of repos in the database, on a background thread.
      */
     fun insert(repos: List<Repo>, insertFinished: () -> Unit) {
         ioExecutor.execute {

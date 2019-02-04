@@ -2,6 +2,7 @@ package com.libandexample.courses.udemy.kotlin.tictactoyonline
 
 import android.annotation.SuppressLint
 import android.os.Bundle
+import android.view.View
 import android.widget.Button
 import com.google.firebase.analytics.FirebaseAnalytics
 import com.google.firebase.database.DataSnapshot
@@ -32,7 +33,7 @@ class MvvmMainActivity : androidx.appcompat.app.AppCompatActivity() {
 
 
     @SuppressLint("OnClick")
-    protected fun buClick(view: android.view.View) {
+    protected fun buClick(view: View) {
         val buSelected = view as android.widget.Button
         var cellID = 0
         when (buSelected.id) {
@@ -173,7 +174,7 @@ class MvvmMainActivity : androidx.appcompat.app.AppCompatActivity() {
 
 
     @SuppressLint("OnClick")
-    protected fun buRequestEvent() {
+    protected fun buRequestEvent(view:View) {
         val userDemail = etEmail.text.toString()
 
         myRef.child("Users").child(SplitString(userDemail)).child("Request").push().setValue(myEmail)
@@ -184,7 +185,7 @@ class MvvmMainActivity : androidx.appcompat.app.AppCompatActivity() {
     }
 
     @SuppressLint("OnClick")
-    protected fun buAcceptEvent() {
+    protected fun buAcceptEvent(view:View) {
         val userDemail = etEmail.text.toString()
         myRef.child("Users").child(SplitString(userDemail)).child("Request").push().setValue(myEmail)
 

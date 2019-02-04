@@ -66,7 +66,7 @@ class MapsActivity : FragmentActivity(), OnMapReadyCallback  {
 
         locationManager.requestLocationUpdates(LocationManager.GPS_PROVIDER,3,3f,myLocation)
 
-        val mythread=myThread()
+        val mythread=MyThread()
         mythread.start()
     }
 
@@ -136,7 +136,7 @@ class MapsActivity : FragmentActivity(), OnMapReadyCallback  {
 
 
     var oldLocation:Location?=null
-    inner class myThread() : Thread() {
+    inner class MyThread() : Thread() {
 
         init {
             oldLocation= Location("Start")

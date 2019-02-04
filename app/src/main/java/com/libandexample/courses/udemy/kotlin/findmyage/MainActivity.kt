@@ -2,6 +2,7 @@ package com.libandexample.courses.udemy.kotlin.findmyage
 
 import android.annotation.SuppressLint
 import android.os.Bundle
+import android.view.View
 import androidx.appcompat.app.AppCompatActivity
 import com.libandexample.R
 import kotlinx.android.synthetic.main.activity_main.*
@@ -18,7 +19,7 @@ class MainActivity : AppCompatActivity() {
 
 
     @SuppressLint("OnClick")
-    protected fun BuClickEvent() {
+    protected fun BuClickEvent(view: View) {
 
         // fire click button
         val userDOB: String = etDOB.text.toString()

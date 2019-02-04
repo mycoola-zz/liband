@@ -2,12 +2,13 @@ package com.libandexample.courses.udemy.kotlin.tictactoyonline
 
 import android.content.Intent
 import android.os.Bundle
-import androidx.appcompat.app.AppCompatActivity
+import android.view.View
 import android.widget.Toast
+import androidx.appcompat.app.AppCompatActivity
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.database.FirebaseDatabase
-import com.libandexample.courses.udemy.kotlin.noteapp.MainActivity
 import com.libandexample.R
+import com.libandexample.courses.udemy.kotlin.noteapp.MainActivity
 import kotlinx.android.synthetic.main.activity_login_tictactoeonline.*
 
 
@@ -26,7 +27,7 @@ class Login : AppCompatActivity() {
     }
 
 
-    fun buLoginEvent() {
+    fun buLoginEvent(view:View) {
 
         LoginToFireBase(etEmail.text.toString(),etPassword.text.toString())
     }

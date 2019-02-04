@@ -43,7 +43,7 @@ class  DbManager(context: Context) {
     }
 
 
-    fun Insert(values:ContentValues):Long{
+    fun insert(values:ContentValues):Long{
 
         val ID= sqlDB!!.insert(dbTable,"",values)
         return ID

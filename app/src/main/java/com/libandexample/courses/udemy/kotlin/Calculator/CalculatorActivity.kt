@@ -1,9 +1,9 @@
 package com.libandexample.courses.udemy.kotlin.Calculator
 
 import android.os.Bundle
-import androidx.appcompat.app.AppCompatActivity
 import android.view.View
 import android.widget.Button
+import androidx.appcompat.app.AppCompatActivity
 import com.libandexample.R
 import kotlinx.android.synthetic.main.activity_calculator.*
 
@@ -98,7 +98,7 @@ private var isNewOp=true
         isNewOp=true
     }
 
-    fun buEqualEvent() {
+    fun buEqualEvent(view: View) {
         val newNumber=etShowNumber.text.toString()
         var finalNumber:Double?=null
         when(op){
@@ -120,7 +120,7 @@ private var isNewOp=true
         isNewOp=true
     }
 
-    fun buPercent() {
+    fun buPercent(view: View) {
         val number:Double=etShowNumber.text.toString().toDouble()/100
 
         etShowNumber.setText(number.toString())
@@ -128,7 +128,7 @@ private var isNewOp=true
 
     }
 
-    fun buClean() {
+    fun buClean(view: View) {
         etShowNumber.setText("0")
         isNewOp=true
     }
