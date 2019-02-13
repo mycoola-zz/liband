@@ -79,7 +79,7 @@ abstract class BaseActivity : AppCompatActivity(), View.OnClickListener {
     }
 
     fun setToolbar(toolbar: Toolbar, toolbarTitle: TextView, title: String, color: Int,
-                   navigationIcon: Drawable?, drawerLayout: DrawerLayout) {
+                   navigationIcon: Drawable?, drawerLayout: DrawerLayout?) {
         setSupportActionBar(toolbar)
         if (!TextUtils.isEmpty(title)) {
             toolbarTitle.visibility = View.VISIBLE
@@ -101,8 +101,10 @@ abstract class BaseActivity : AppCompatActivity(), View.OnClickListener {
 
             toolbar.setNavigationOnClickListener {
 
-                if (!drawerLayout.isDrawerOpen(GravityCompat.START)) {
-                    drawerLayout.openDrawer(GravityCompat.START)
+                if (drawerLayout != null) {
+                    if (!drawerLayout.isDrawerOpen(GravityCompat.START)) {
+                        drawerLayout.openDrawer(GravityCompat.START)
+                    }
                 }
             }
         }
