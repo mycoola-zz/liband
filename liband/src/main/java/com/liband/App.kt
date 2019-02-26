@@ -16,7 +16,7 @@ import java.io.IOException
 import java.util.concurrent.TimeUnit
 
 
-class App : MultiDexApplication() {
+open class App : MultiDexApplication() {
     private var retrofitAdapter: Retrofit? = null
 
 
