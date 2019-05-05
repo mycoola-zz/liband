@@ -48,7 +48,7 @@ abstract class BaseActivity : AppCompatActivity(), View.OnClickListener {
 
     fun replaceFragment(containerViewId: Int, fragment: Fragment) {
         val manager = supportFragmentManager
-        manager.popBackStack(null, FragmentManager.POP_BACK_STACK_INCLUSIVE)
+        manager.popBackStackImmediate(null, FragmentManager.POP_BACK_STACK_INCLUSIVE)
         val transaction = manager.beginTransaction()
         transaction.replace(containerViewId, fragment, fragment.javaClass.simpleName)
         transaction.commitAllowingStateLoss()
