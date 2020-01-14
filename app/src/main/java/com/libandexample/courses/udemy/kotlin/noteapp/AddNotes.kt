@@ -17,11 +17,16 @@ class AddNotes : AppCompatActivity() {
 
 
        try{
-           val bundle:Bundle=intent.extras
-           id=bundle.getInt("ID",0)
+           val bundle: Bundle? =intent.extras
+           if (bundle != null) {
+               id=bundle.getInt("ID",0)
+           }
            if(id!=0) {
-               etTitle.setText(bundle.getString("name") )
-               etDes.setText(bundle.getString("des") )
+               if (bundle != null) {
+                   etTitle.setText(bundle.getString("name") )
+                   etDes.setText(bundle.getString("des") )
+               }
+
 
            }
        }catch (ex:Exception){}

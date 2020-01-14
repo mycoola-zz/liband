@@ -33,10 +33,11 @@ open class App : MultiDexApplication() {
             val okHttpClient = OkHttpClient()
             val builder = okHttpClient.newBuilder()
             builder.addInterceptor(logging)
-            builder.addInterceptor { chain ->
 
-                val original = chain.request()
-                val originalHttpUrl = original.url()
+            val addInterceptor = builder.addInterceptor {
+
+                val original = it.request()
+                val originalHttpUrl = original.url
 
                 val url = originalHttpUrl.newBuilder()
                         .build()
@@ -46,7 +47,7 @@ open class App : MultiDexApplication() {
                         .url(url)
 
                 val request = requestBuilder.build()
-                chain.proceed(request)
+                it.proceed(request)
             }
             builder.connectTimeout(300, TimeUnit.SECONDS)
             builder.readTimeout(300, TimeUnit.SECONDS)
@@ -71,13 +72,12 @@ open class App : MultiDexApplication() {
                 .addInterceptor(OfflineResponseCacheInterceptor(this.applicationContext))
                 .cache(NetUtil.getNetworkCache(this.applicationContext))
                 .build()
-        val retrofit = Retrofit.Builder()
+        return Retrofit.Builder()
                 .baseUrl(baseUrl)
                 .addCallAdapterFactory(RxJavaCallAdapterFactory.create())
                 .addConverterFactory(GsonConverterFactory.create())
                 .client(httpClient)
                 .build()
-        return retrofit
     }
 
 
@@ -85,7 +85,7 @@ open class App : MultiDexApplication() {
         @Throws(IOException::class)
         override fun intercept(chain: Interceptor.Chain): Response {
             val originalResponse = chain.proceed(chain.request())
-            return if (chain.request().method() == "GET") {
+            return if (chain.request().method == "GET") {
                 originalResponse.newBuilder()
                         .header("Cache-Control", "public, max-age=0")
                         .build()
@@ -110,7 +110,7 @@ open class App : MultiDexApplication() {
         override fun intercept(chain: Interceptor.Chain): Response {
             var request = chain.request()
             if (!NetUtil.isNetworkAvailable(this.applicationContext)) {
-                if (request.method() == "GET") {
+                if (request.method == "GET") {
                     request = request.newBuilder()
                             .header("Cache-Control", "public, only-if-cached, max-stale=$MAX_STALE")
                             .build()
