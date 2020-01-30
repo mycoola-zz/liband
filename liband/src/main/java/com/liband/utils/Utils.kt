@@ -1,11 +1,11 @@
 package com.liband.utils
 
-import android.app.Activity
 import android.app.Application
 import android.os.Build
 import android.util.TypedValue
 import android.view.View
-import android.view.inputmethod.InputMethodManager
+import java.util.*
+import kotlin.math.roundToInt
 
 
 object Utils {
@@ -15,9 +15,9 @@ object Utils {
             val manufacturer = Build.MANUFACTURER
             val model = Build.MODEL
             return if (model.startsWith(manufacturer)) {
-                model.toUpperCase()
+                model.toUpperCase(Locale.ROOT)
             } else {
-                manufacturer.toUpperCase() + " " + model
+                manufacturer.toUpperCase(Locale.ROOT) + " " + model
             }
         }
 
@@ -26,20 +26,11 @@ object Utils {
      */
     fun dpToPx(application: Application, dp: Int): Int {
         val r = application.resources
-        return Math.round(TypedValue.applyDimension(TypedValue.COMPLEX_UNIT_DIP, dp.toFloat(), r.displayMetrics))
+        return TypedValue.applyDimension(TypedValue.COMPLEX_UNIT_DIP, dp.toFloat(), r.displayMetrics).roundToInt()
     }
 
     fun reflectVisibilityOfView(view: View) {
         view.visibility = if (view.visibility == View.VISIBLE) View.GONE else View.VISIBLE
-    }
-
-    fun hideSoftKeyboard(activity: Activity) {
-        if (!activity.isFinishing) {
-            val inputMethodManager = activity.getSystemService(Activity.INPUT_METHOD_SERVICE) as InputMethodManager
-            if (inputMethodManager.isActive) {
-                inputMethodManager.hideSoftInputFromWindow(activity.currentFocus!!.windowToken, 0)
-            }
-        }
     }
 
 }

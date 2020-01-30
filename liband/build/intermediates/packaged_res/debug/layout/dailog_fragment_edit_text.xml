@@ -1,0 +1,22 @@
+
+                                                        
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/edit_name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center" android:tag="layout/dailog_fragment_edit_text_0" xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto">
+
+        <EditText
+            android:id="@+id/txt_your_name"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:imeOptions="actionDone"
+            android:inputType="text"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            android:importantForAutofill="no" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+         
