@@ -76,11 +76,9 @@ object DateUtil {
         val parts = Date.split("-".toRegex()).dropLastWhile { it.isEmpty() }.toTypedArray()
         if (parts.size == 3) {
             val year: Int = Integer.parseInt(parts[2])
-            val month: Int
-            val day: Int
 
-            month = Integer.parseInt(parts[1])
-            day = Integer.parseInt(parts[0])
+            val month: Int = Integer.parseInt(parts[1])
+            val day: Int = Integer.parseInt(parts[0])
             return intArrayOf(year, month, day)
         }
         return null

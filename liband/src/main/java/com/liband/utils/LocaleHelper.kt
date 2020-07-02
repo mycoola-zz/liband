@@ -3,13 +3,13 @@ package com.liband.utils
 import android.annotation.TargetApi
 import android.content.Context
 import android.os.Build
-import android.preference.PreferenceManager
+import androidx.preference.PreferenceManager
 import java.util.*
 
 
 object LocaleHelper {
 
-    private val SELECTED_LANGUAGE = "Locale.Helper.Selected.Language"
+    private const val SELECTED_LANGUAGE = "Locale.Helper.Selected.Language"
 
     fun onAttach(context: Context): Context {
         val lang = getPersistedData(context, Locale.getDefault().language)
@@ -59,7 +59,6 @@ object LocaleHelper {
         return context.createConfigurationContext(configuration)
     }
 
-    @SuppressWarnings("deprecation")
     private fun updateResourcesLegacy(context: Context, language: String?): Context {
         val locale = Locale(language)
         Locale.setDefault(locale)
@@ -67,7 +66,7 @@ object LocaleHelper {
         val resources = context.resources
 
         val configuration = resources.configuration
-        configuration.locale = locale
+        configuration.setLocale(locale)
         configuration.setLayoutDirection(locale)
 
         resources.updateConfiguration(configuration, resources.displayMetrics)
