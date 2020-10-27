@@ -22,7 +22,7 @@ class MvvmMainActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_main)
+        setContentView(R.layout.activity_main4)
 
         val buttonAddNote = findViewById<FloatingActionButton>(R.id.button_add_note)
         buttonAddNote.setOnClickListener { v ->
@@ -73,8 +73,8 @@ class MvvmMainActivity : AppCompatActivity() {
             val description = data.getStringExtra(AddEditNoteActivity.EXTRA_DESCRIPTION)
             val priority = data.getIntExtra(AddEditNoteActivity.EXTRA_PRIORITY, 1)
 
-            val note = Note(title, description, priority)
-            noteViewModel!!.insert(note)
+//            val note = Note(title, description, priority)
+//            noteViewModel!!.insert(note)
 
             Toast.makeText(this, "Note saved", Toast.LENGTH_SHORT).show()
         } else if (requestCode == EDIT_NOTE_REQUEST && resultCode == Activity.RESULT_OK) {
@@ -89,9 +89,9 @@ class MvvmMainActivity : AppCompatActivity() {
             val description = data.getStringExtra(AddEditNoteActivity.EXTRA_DESCRIPTION)
             val priority = data.getIntExtra(AddEditNoteActivity.EXTRA_PRIORITY, 1)
 
-            val note = Note(title, description, priority)
-            note.id = id
-            noteViewModel!!.update(note)
+//            val note = Note(title, description, priority)
+//            note.id = id
+//            noteViewModel!!.update(note)
 
             Toast.makeText(this, "Note updated", Toast.LENGTH_SHORT).show()
         } else {
