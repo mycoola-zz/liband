@@ -4,6 +4,7 @@ import android.os.Bundle
 import android.view.View
 import android.widget.Button
 import androidx.appcompat.app.AppCompatActivity
+import com.liband.extensions.setVisibility
 import com.libandexample.R
 import kotlinx.android.synthetic.main.activity_calculator.*
 
@@ -100,6 +101,7 @@ private var isNewOp=true
 
     fun buEqualEvent(view: View) {
         val newNumber=etShowNumber.text.toString()
+        etShowNumber.setVisibility(false)
         var finalNumber:Double?=null
         when(op){
 

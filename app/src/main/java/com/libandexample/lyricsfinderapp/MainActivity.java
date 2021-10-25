@@ -28,6 +28,7 @@ public class MainActivity extends AppCompatActivity {
 
     String url;
     RequestQueue requestQueue;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -39,8 +40,6 @@ public class MainActivity extends AppCompatActivity {
         txtLyrics = findViewById(R.id.txtLyrics);
 
 
-
-
         btnGetLyrics.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -48,7 +47,7 @@ public class MainActivity extends AppCompatActivity {
                 Toast.makeText(getApplicationContext(), "Tapped", Toast.LENGTH_LONG).show();
 
                 url = "https://api.lyrics.ovh/v1/" + edtArtistName.getText().toString() + "/" + edtArtistSong.getText().toString();
-                url.replaceAll(" " ,"%20");
+                url.replaceAll(" ", "%20");
 
                 requestQueue = Volley.newRequestQueue(MainActivity.this);
                 JsonObjectRequest
@@ -77,8 +76,7 @@ public class MainActivity extends AppCompatActivity {
                         },
                         new Response.ErrorListener() {
                             @Override
-                            public void onErrorResponse(VolleyError error)
-                            {
+                            public void onErrorResponse(VolleyError error) {
                             }
                         });
                 requestQueue.add(jsonObjectRequest);
@@ -86,7 +84,6 @@ public class MainActivity extends AppCompatActivity {
 
             }
         });
-
 
 
     }
