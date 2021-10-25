@@ -34,7 +34,7 @@ class RoundRectCornerImageView : AppCompatImageView {
     override fun onDraw(canvas: Canvas) {
         rect!!.set(0f, 0f, this.width.toFloat(), this.height.toFloat())
         val radius = 14.0f
-        path!!.addRoundRect(rect, radius, radius, Path.Direction.CW)
+        path!!.addRoundRect(rect!!, radius, radius, Path.Direction.CW)
         canvas.clipPath(path!!)
         super.onDraw(canvas)
     }
